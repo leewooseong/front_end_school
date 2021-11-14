@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위니브 홈페이지 마크업 클론</title>
+</head>
+
+<body>
+    <!-- 피드백: 위의 h1, h2, p를 header로 잡은 이유: 아래의 문서를 소개하고 있기 때문 -->
+    <!-- 피드백: ICT와 같이 어려운 용어는 abbr로 설명 -->
+    <header>
+        <h1>About</h1>
+        <h2>"기술의 교육 기회를 누구나 차등없이 받을 수 있게 대중화, 보편화, 시스템화 하는 것"</h2>
+        <p>우리는 교육 특권의 대중화, 고급 IT 기술의 사용화를 도모합니다.<br> 또한 지역적 특성을 극복하고 <abbr
+                title="Inforamtion & Communications Technology">ICT</abbr> 지식에 대한 갈급함을 해소할 수 있도록 노력하고 있는<br>
+            <abbr title="Inforamtion & Communications Technology">ICT</abbr> 연구 및 (코딩)교육기관이며 다양한 사회 공헌 활동을 하고 있습니다.
+        </p>
+    </header>
+    <!-- 피드백: section 안에 또 다른 section이 들어가있는 형태 -->
+    <!-- 피드백: section = 주제가 변할 때 언급을 해주는 것 -->
+    <!-- 피드백: section 안에서 안으로 넘어갈 때 heading tag(h1, h2, ...)의 번호도 커지게 작성 -->
+    <main>
+        <section>
+            <h2></h2>
+            <a href="#cont-paullab"></a>
+            <a href="#cont-weniv"></a>
+            <a href="#cont-jecoba"></a>
+            <section id="cont-paullab">
+                <!-- paullab에 관한 설명 -->
+            </section>
+            <section id="cont-weniv">
+                <!-- weniv에 관한 설명 -->
+            </section>
+            <section id="cont-jecoba">
+                <!-- jecoba에 관한 설명 -->
+            </section>
+
+        </section>
+    </main>
+    <!-- 재현님 코드 구현이 과제랑 다른 것 같아 일단 이 부분 주석 -->
+    <!-- <ul>
+        <li>
+            <figure>
+                <img width="200px" height="auto" src="/images/logo_paullab.png" alt="바울렘">
+                <figcaption>바울렘</figcaption>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img width="200px" height="auto" src="images/logo_weniv.png" alt="위니브">
+                <figcaption>위니브</figcaption>
+            </figure>
+        </li>
+        <li>
+            <figure>
+                <img width="200px" height="auto" src="/images/logo_jejucodingbasecamp.png" alt="제주코딩베이스캠프">
+                <figcaption>제주코딩베이스캠프</figcaption>
+            </figure>
+
+        </li>
+    </ul> -->
+
+
+    <footer>
+        <!-- 피드백: 링크가 걸리는 부분은 a tag로 만들어주기 -->
+
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">채용정보</a></li>
+            <li><a href="">캐릭터 소개</a></li>
+        </ul>
+        <ul>
+            <li><a href="">About</a></li>
+            <li><a href="">커리큘럼</a></li>
+            <li><a href="">자료실</a></li>
+        </ul>
+
+        <ul>
+            <li><a href="">blog</a></li>
+            <li><a href="">instagram</a></li>
+            <li><a href="">facebook</a></li>
+        </ul>
+
+
+        <hr>
+        <strong>(주)위니브</strong>
+        <dl>
+            <dt><strong>대표</strong></dt>
+            <dd>이호준</dd>
+            <dt><strong>사업자번호</strong></dt>
+            <dd>546-86-01737</dd>
+            <dt><strong>주소</strong></dt>
+            <!-- 피드백: 주소에는 address tag를 사용해야한다. -->
+            <dd>제주도 제주시 수목원길 39-1, 1층</dd>
+        </dl>
+        <div><span>ⓒWeniv Corp.</span></div>
+    </footer>
+</body>
+
+</html>

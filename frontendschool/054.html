@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color</title>
+    <style>
+        /* 색 이름은 html color name으로 검색하면 알수 있다. */
+        /* color name */
+        .one {
+            width: 200px;
+            height: 100px;
+            background:red;
+        }
+        /* hex? */
+        /* hex: 16진수 0~f */
+        /* oct: 8진수 0~7*/
+        /* bin: 2진수 0, 1*/
+        /* color hex code -> 빛의 원리로 기억하자! 000000 빛이 없는 상태, ffffff 빛이 다 있는 상태*/
+        .two {
+            width: 200px;
+            height: 100px;
+            background:#222222;
+        }
+        .three {
+            width: 200px;
+            height: 100px;
+            background: #999999
+        }
+        .four {
+            width: 200px;
+            height: 100px;
+            /* rgba: red,green,blue,alpha (alpha = opacity) */
+            background: rgba(255, 0, 3, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+</body>
+</html>

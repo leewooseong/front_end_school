@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 쿼리</title>
+    <style>
+        body {
+            background-color: tomato;
+        }
+        /* flex로 반응형을 제공할 수 있다. */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            border: 10px solid red;
+            height: 500px;
+            width: 100%;
+            background-color: yellow;
+        }
+        /* 
+            반응형에서 주의할 점!
+            크기가 바뀌어도 container의 속성을 재정의하지 않고 그대로 가져온다.(flex를 적용하지 않는 경우 포함)
+         */
+        .item{
+            margin: 50px;
+            width: 500px;
+            background-color: sienna;
+        }
+
+        @media screen and (max-width:1000px) {
+            body {
+                background-color: green;
+            }
+
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                box-sizing: border-box;
+                border: 10px solid red;
+                height: 800px;
+                width: 100%;
+                background-color: yellow;
+            }
+
+            .item {
+                margin: 50px;
+                width: 800px;
+                background-color: sienna;
+            }
+        }
+
+        /* 화면이 screen이고 width가 1000px까지는 green */
+        @media screen and (max-width: 1000px) {
+            body {
+                background-color: green;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            body {
+                background-color: violet;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ab beatae quidem ex corrupti asperiores sapiente recusandae voluptas autem ratione debitis delectus quaerat est vero illo, adipisci fuga esse exercitationem?
+        </div>
+        <div class="item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam ab beatae quidem ex corrupti asperiores sapiente recusandae voluptas autem ratione debitis delectus quaerat est vero illo, adipisci fuga esse exercitationem?
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/reset.css">
+    <title>Naver Login</title>
+    <style>
+        a {
+            text-decoration: none;
+            /* cursor: none; */
+        }
+        .login-container {
+            /* width: 350px;
+            height: 135px; */
+            padding: 16px 16px 12px 17px;
+            font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo", sans-serif;
+        }
+
+        .login-string {
+            font-size: 12px;
+            color: #808080;
+        }
+
+        .login {
+            margin-top: 11px;
+            background: #19ce60;
+            border: 1px solid #19ce60;
+            border-radius: 2px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            width: 315px;
+            height: 48px;
+        }
+
+        .login > button > a {
+            color: white;
+        }
+
+        .login img {
+            margin-top: 2px;
+            margin-right: 5px;
+            font-size: 13px;
+        }
+
+        .auth-buttons-container{
+            margin-top: 17px;
+            margin-right: 8px;
+            margin-left: 4px;
+        }
+
+        .auth-buttons-container button {
+            background: transparent;
+            border: 1px solid transparent;
+        }
+    </style>
+</head>
+<!-- 
+    개발 순서
+1. markup
+2. styling
+-->
+
+<body>
+    <article class="login-container">
+        <h2 class="login-string">네이버를 더 안전하고 편리하게 이용하게요</h2>
+
+        <button class="login"><img width="60px" height="12px" src="/hm&practice/images/title.png" alt=""> <a
+                href=>로그인</a></button>
+        <section class="auth-buttons-container">
+            <button><img width="10px" height="14px" style="margin:1px;" src="/hm&practice/images/lock.png" alt="">
+                <a href="#">아이디</a>
+            </button>
+            <span> · </span>
+            <button><img src="" alt="">
+                <a href="#">비밀번호 찾기</a>
+            </button>
+            <!-- 질문해보기 -->
+            <!--
+                button을 눌렀을 때 다른 페이지로 넘어가는 것을 생각하고 짰는데 a tag의 동작이 안되는 것 같더라구요!
+                어떤게 문제인지 몰라 이렇게 문의드립니다..
+             -->
+            <a href="#">
+                <button style="display: inline;"><img width="11px" height="11px" style="margin-top:2px; margin-left:5px;"
+                        src="/hm&practice/images/user.png" alt=""> 회원가입</button>
+            </a>
+        </section>
+    </article>
+</body>
+
+</html>

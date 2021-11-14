@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인라인 css 기본</title>
+    <!-- cascading! 아래 있는 스타일로 적용 -->
+    <!-- 외부 css -->
+    <link rel="stylesheet" href="015.css">
+    <link rel="stylesheet" href="015test.css">
+    <style>
+        @import url("015.css");
+    </style>
+</head>
+<body>
+    <!-- 
+        1. 내부 css
+            - style tag로 지정하는 css
+        2. 외부 css
+            - 외부 파일로 설정
+        3. 인라인 css
+
+        ※ ***적용하는 코드에 가까울수록 가중치가 높다!
+     -->
+     <h1 style="color:red;">hello world</h1>
+</body>
+</html>

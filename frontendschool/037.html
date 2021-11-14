@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가변크기 단위</title>
+    <style>
+        html, body {
+            font-size: 10px;
+        }
+        p {
+            font-size: 2em;
+            font-weight: 700 /*h1과 p의 bold차이가 있기 때문에 써주는 코드*/
+        }
+        div {
+            font-size: 2em;
+        }
+        .one{
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- em, %, rem, vw, vh -->
+    <!-- em: 내 부모로부터 가져온 font의 배수 단위, 한 번에 많은 글자를 동일하게 증감 가능 -->
+    <!-- rem: html(root)의 font-size를 배수로 가진다.-->
+    <!-- %: -->
+    <!-- vw, vh -->
+    <!-- 기본 픽셀을 16픽셀 -->
+    <h1>hello-world</h1>
+    <p>hello-world</p>
+    <div>
+        <div>
+            <div class="one">hello world</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-basis</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        .container {
+            display: flex;
+            /* flex-direction에 따라 높이에 100px 적용할 지  */
+            /* flex-direction: column; */
+            flex-direction: row;
+        }
+
+        .item {
+            background: pink;
+            flex-basis: 100px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- div 넓이가 안나온다? -->
+        <div class="item">Lorem, ipsum.</div>
+        <div class="item">Lorem ipsum dolor sit amet.</div>
+        <div class="item">Lorem, ipsum.</div>
+    </div>
+</body>
+
+</html>

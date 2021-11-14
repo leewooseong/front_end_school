@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>smacss(스멕스)</title>
+<link rel="stylesheet" href="reset.css">
+<style>
+
+/* 1. 베이스 */
+/* 2. 레이아웃 */
+/* 3. 모듈 */
+.btn{
+    display: inline-block;
+    width: 300px;
+    padding: 20px  10px;
+    font-size: 18px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    background-color: brown;
+}
+/* 비슷한 모듈안에서 모양이 조금씩 다르다면 서브 클래스 이용 */
+.btn.btn-small {
+    /* oocss와 차이점  */
+    width: 80px;
+    padding: 10px 0;
+    font-size: 14px;
+}
+.btn.btn-long{
+    width: 160px;
+}
+/* 4. 스테이트 */
+.tabnav {
+    display: flex;
+}
+.tabnav li{
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.tabnav li:first-child {
+    border-left: 1px solid black;
+}
+.tabnav li a {
+    display: block;
+    padding: 10px 30px;
+    text-decoration: none;
+}
+/* 요게 state 클래스 > js를 통한 특정상태일 때 특정 스타일을 적용해주는 것 */
+.is-active{
+    background-color: blanchedalmond;
+}
+
+.is-active a{
+    pointer-events: none;
+    color: red;
+}
+
+/* 5. 테마  */
+
+/* 모듈 */
+.mod {
+    border: 1px solid;
+
+}
+/* 테마적용 > 테마를 표현할 스타일을 빼놓을 것 */
+.mod {
+    border-color: blue;
+}
+</style>
+</head>
+<body>
+    <!-- <header id="header"></header>
+    <main id="main">
+        <a href="" class="btn btn-small">아이디/비밀번호 찾기</a>
+        <a href="" class="btn btn-long">로그인</a>
+    </main>
+    <footer id="footer"></footer> -->
+
+    <ul class="tabnav">
+        <li class="is-active"><a href="">탭1</a></li>
+        <li><a href="">탭2</a></li>
+        <li><a href="">탭3</a></li>
+        <li><a href="">탭4</a></li>
+    </ul>
+</body>
+</html>

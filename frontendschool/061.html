@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>absolute 복습</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+        .second {
+            position: absolute;
+            background: black;
+
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <!-- 얘는 absolute로 뜨지만 앞의 div가 있기 때문에 첫 div상자 다음에 위치한다. -->
+    <!-- normal flow: div1, div3   -->
+    <!-- position flow: div2(위치 상으로 div3위에 div3)   -->
+    <div class="second"></div>
+    <div></div>
+</body>
+</html>

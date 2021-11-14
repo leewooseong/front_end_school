@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flex</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./src/styles.css" />
+
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+        box-sizing: border-box;
+        font-weight: 600;
+    }
+
+    /* 
+        1. display: flex (display: block + flex)
+        - display:block 처럼 차지한다!
+        2. display: inline-flex(display: inline + flex)
+        - display:inline처럼 요소의 크기만큼만 차지한다.
+     */
+    .container {
+        display: flex;
+        /* justify-content: flex-start; */
+        /* justify-content: flex-end; */
+        /* justify-content: center; */
+        /* 요소들 간의 간격을 조절해주는 속성 */
+        /* justify-content: space-between; */
+        /* 여백이 감싸고 있는 형태 */
+        /* justify-content: space-around; */
+        justify-content: space-evenly;
+
+        background: #f9f1f0;
+        border: 2px solid black;
+        width: 700px;
+        height: 500px;
+    }
+
+    .box {
+        background-color: pink;
+        border: 2px solid black;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        text-align: center;
+        line-height: 100px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+    </div>
+</body>
+
+</html>

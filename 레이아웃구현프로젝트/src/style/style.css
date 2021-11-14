@@ -1,0 +1,313 @@
+@charset "utf-8";
+
+/* ※ css 작성 순서 및 양식 ※ > 순서는 바뀔 수 있다.*/
+/* reset */
+/* setting */
+/* animation */
+/* utility */
+/* layout */
+/* design */
+/* media query */
+
+/* utility */
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* single line - ellipsis(한줄 말줄임) */
+.sl-ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 두 줄 말줄임 */
+.multi-ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding-bottom: 3px;
+}
+
+/* skip-navigation */
+.nav-skip a {
+  position: absolute;
+  top: -200px;
+  left: 0;
+  width: 300px;
+  line-height: 30px;
+  border: 1px solid #fff;
+  color: #fff;
+  background: #333;
+  text-align: center;
+}
+
+.nav-skip a:active,
+.nav-skip a:focus {
+  top: 0;
+}
+
+/* style */
+.cont-movie {
+  width: 1006px;
+  margin: 86px auto 0;
+  padding: 0 27px 29px;
+  border: 2px solid #bdbdbd;
+  border-radius: 15px;
+  background: #e5e5e5;
+}
+
+.cont-movie .tit-cont {
+  font-size: 25px;
+  text-align: center;
+  line-height: 28px;
+  padding: 38px 0;
+}
+
+.cont-movie .nav-movie {
+  text-align: center;
+}
+
+/* borderbottom으로 줘도 되고 가상요소로도 하는 것도 깔끔 */
+/* border-bottom 쓰는 경우: 테이블 제목 아래를 꾸미는 것에 주로 사용하셨다. */
+/* 가상요소로 사용한 이유: 총제목이나 nav에 해당하는 것들을 구분해주는 것이라고 보이기 때문에 가상요소로 만드는 것이 더 좋다고 생각. */
+.cont-movie .nav-movie::before {
+  display: block;
+  content: "";
+  width: 650px;
+  height: 2px;
+  background: #bdbdbd;
+  margin: 0 auto;
+}
+
+.cont-movie .list-movieNav {
+  display: inline-block;
+  margin: 27px 0;
+}
+
+.cont-movie .list-movieNav li {
+  float: left;
+}
+
+.cont-movie .list-movieNav li + li {
+  margin-left: 60px;
+}
+
+.cont-movie .list-movieNav .link-nav {
+  color: #828282;
+}
+
+.cont-movie .list-movieNav .on .link-nav {
+  color: #000;
+  font-weight: bold;
+}
+
+/* 콘텐츠 스타일 */
+.cont-movie .list-movieInfo {
+  overflow: hidden;
+  padding: 0 12px 24px 12px;
+  border: 2px solid #bdbdbd;
+  border-radius: 15px;
+  background: #ffffff;
+}
+
+/* margin? padding? line-height? > 문자와 관련된 건 line-height를 이용! */
+.cont-movie .list-movieInfo .tit-moive {
+  font-weight: bold;
+  line-height: 23px;
+}
+
+.cont-movie .list-movieInfo li {
+  /* 버튼 삐져나온 부분을 overflow로 처리.. wow.. */
+  overflow: hidden;
+  float: left;
+  border: 1px solid #bdbdbd;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* ^= "value" value로 시작하는 tag들 */
+.cont-movie .list-movieInfo li > a[class^="link"] {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  height: 41px;
+  line-height: 41px;
+  background: #f2f2f2;
+  border-top: 1px solid #bdbdbd;
+}
+
+.cont-movie .list-movieInfo li .link-reserv::after {
+  /* display: inline-block; */
+  float: right;
+  content: "";
+  width: 1px;
+  height: 100%;
+  background: #bdbdbd;
+}
+
+.cont-movie .list-movieInfo li .link-teaser::before {
+  display: inline-block;
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: url("../images/movieList/icon_play.png");
+  /* background-size: 100% 100%; */
+  vertical-align: top;
+  margin: 11px 2px 0 0;
+}
+
+.cont-movie .list-movieInfo .link-movie {
+  display: block;
+  margin-bottom: 11px;
+}
+
+.list-movieInfo .list-info {
+  margin-top: 12px;
+}
+
+.list-movieInfo article {
+  width: 180px;
+  padding: 19px 19px 0 19px;
+}
+
+.list-movieInfo .list-info dt,
+.list-movieInfo .list-info dd {
+  display: inline-block;
+  font-size: 13px;
+  vertical-align: top;
+  line-height: 1.2;
+}
+
+.list-movieInfo .list-info dt {
+  font-weight: lighter;
+  color: #828282;
+}
+
+.list-movieInfo .list-info .multi-ellipsis {
+  width: 140px;
+  height: 28px;
+  float: right;
+  /* 웹브라우저에 따라 지원 안하는 속성은 -webkit-(크롬 지원)을 써줘야한다. 지금은 box라는 속성을 쓰고 싶은 것 */
+  display: -webkit-box;
+  margin-left: 5px;
+}
+
+.list-movieInfo .list-info .item-star {
+  float: right;
+}
+
+.list-movieInfo .list-info .item-star dt::after {
+  display: inline-block;
+  content: "";
+  width: 14px;
+  height: 13px;
+  margin-left: 5px;
+  background: url(../images/별점이미지.png);
+  vertical-align: top;
+}
+
+.list-movieInfo .list-info div {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+/* footer style */
+.cont-company {
+  background: #f2f2f2;
+  margin-top: 135px;
+}
+.cont-company .cont-coInfo {
+  position: relative;
+  overflow: hidden;
+  width: 1189px;
+  margin: 0 auto;
+}
+
+.cont-coInfo .tit-company {
+  display: block;
+  font-size: 22px;
+  height: 118px;
+  line-height: 118px;
+  border-bottom: 2px solid #c4c4c4;
+  font-weight: 700;
+}
+
+.cont-coInfo .list-coInfo {
+  float: left;
+  margin: 38px 0;
+}
+.cont-coInfo .list-coInfo dt,
+.cont-coInfo .list-coInfo dd {
+  display: inline-block;
+  float: left;
+}
+
+.cont-company .list-coInfo dt {
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+.cont-company .list-coInfo dd {
+  font-weight: 400;
+}
+
+.cont-company .list-coInfo dd:after {
+  display: inline-block;
+  content: "";
+  width: 1px;
+  height: 12px;
+  margin: 0 12px;
+  background: #000;
+}
+.cont-company .list-coInfo dd:last-child::after {
+  display: none;
+}
+
+/* 부모 위치 .cont-conpany .cont-coInfo > position:relative; */
+.cont-company .list-sns {
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+
+.cont-company .list-sns li {
+  float: left;
+  margin-left: 22px;
+}
+
+/* 글자는 날라가서 안보이게! ***글자도 적어줘야한다! */
+.cont-company .list-sns a[class^="link"] {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  font-size: 1px;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.cont-company .list-sns .link-twitter {
+  background: url("../images/sns/twitter.png");
+  background-size: 100% 100%;
+}
+.cont-company .list-sns .link-insta {
+  background: url("../images/sns/instagram.png");
+  background-size: 100% 100%;
+}
+.cont-company .list-sns .link-facebook {
+  background: url("../images/sns/facebook.png");
+  background-size: 100% 100%;
+}
+
+.cont-company .txt-copy {
+  float: right;
+  font-size: 14px;
+  margin-bottom: 10px;
+}

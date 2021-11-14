@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-shrink</title>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        .container {
+            display: flex;
+            /* flex-direction에 따라 높이에 100px 적용할 지  */
+            /* flex-direction: column; */
+            flex-direction: row;
+        }
+
+        .item {
+            background: pink;
+            flex-basis: 200px;
+            /* width 값이 있지만 width 나 height가 flex-basis가 중복되면 반영되지 않는다. */
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            /* flex-shrink: 1; */
+        }
+
+        .second {
+            /* flex-grow:0; */
+            flex-shrink: 2;
+            /* 축약형 */
+            /* flex:1; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- div 넓이가 안나온다? -->
+        <div class="item">Lorem, ipsum.</div>
+        <div class="item second">Lorem ipsum dolor sit amet.</div>
+        <div class="item">Lorem, ipsum.</div>
+    </div>
+</body>
+
+</html>

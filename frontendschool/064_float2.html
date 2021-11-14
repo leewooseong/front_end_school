@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 해결방법2 overflow: hidden</title>
+    <style>
+        ul {
+            /* 부모에 적용해야한다. */
+            /* 부모가 float된 자식의 존재를 알기 위해서 사용하는 것 */
+            /* 자식 요소가 다 float된 상태라면 부모는 자식의 존재를 알지 못한다.(개발자 도구로 확인 시 자식의 높이. 넓이를 인지하지 못함.) 
+               ※ 모든 요소가 float가 아니라면 clear로 충분히 자식을 인지할 수 있다.*/
+            overflow: hidden;
+            /* 방법1. overflow: hidden > 사용 시 부모의 자식요소의 contents가 부모를 넘어가면 잘릴 수 있다.  */
+            /*     이 때문에 display: inline-block 속성을 사용할 수 있다.   */
+            /* 방법2. inline-block 속성을 갖게 된 요소는 인라인 요소와 마찬가지로 박스가 끝나는 지점에 약 4px 정도의 공백을 갖게 되므로 이점 유념하시는게 좋겠습니다. 출처: https://naradesign.github.io/float-clearing.html */
+            /* display: inline-block; */
+        }
+        li{
+            width: 300px;
+            height:100px;
+            background: pink;
+        }
+        .float {
+            float:left;
+        }
+        li:nth-child(4){
+            clear: both;
+        }
+        /* ul::after{
+            content:'';
+            display: block;
+            clear:both;
+        } */
+
+
+        
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="float"></li>
+        <li class="float"></li>
+        <li class="float"></li>
+        <li></li>
+    </ul>
+</body>
+</html>

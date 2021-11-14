@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticy</title>
+    <style>
+        section {
+            height: 1000px;
+            border: 3px solid black;
+        }
+
+        h2 {
+            /* sticky는 나온자 얼마 안돼서 벤더 프리픽스가 필요하다. */
+            /* sticky는 가장 가까운 부모에 붙는데 스크롤되는 부모일때 붙는다. */
+            /* 그냥봤을때는 static과 동일, but 자신의 위치 임계점을 넘길 때 붙어있다가 부모의 영역이 끝나면 sticky 속성이 해제되는 것! */
+            position: -webkit-sticky;
+            position: sticky;
+            background: greenyellow;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+    <h1>sticy test</h1>
+    <section>
+        <h2>1.오늘의 점심 메뉴</h2>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eligendi vel, dicta modi minus ad ipsum. Suscipit aspernatur deleniti eos, rem nemo laudantium a debitis minima libero natus facere nisi eum tempore totam velit nobis consectetur eaque! Nulla vel, repellendus esse eligendi consequatur eius hic deleniti voluptatibus, dolorum, magnam iure?</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eligendi vel, dicta modi minus ad ipsum. Suscipit aspernatur deleniti eos, rem nemo laudantium a debitis minima libero natus facere nisi eum tempore totam velit nobis consectetur eaque! Nulla vel, repellendus esse eligendi consequatur eius hic deleniti voluptatibus, dolorum, magnam iure?</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eligendi vel, dicta modi minus ad ipsum. Suscipit aspernatur deleniti eos, rem nemo laudantium a debitis minima libero natus facere nisi eum tempore totam velit nobis consectetur eaque! Nulla vel, repellendus esse eligendi consequatur eius hic deleniti voluptatibus, dolorum, magnam iure?</li>
+        </ul>
+    </section>
+    <section>
+        <h2>2. 내일의 점심 메뉴!</h2>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eligendi vel, dicta modi minus ad ipsum. Suscipit aspernatur deleniti eos, rem nemo laudantium a debitis minima libero natus facere nisi eum tempore totam velit nobis consectetur eaque! Nulla vel, repellendus esse eligendi consequatur eius hic deleniti voluptatibus, dolorum, magnam iure?</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eligendi vel, dicta modi minus ad ipsum. Suscipit aspernatur deleniti eos, rem nemo laudantium a debitis minima libero natus facere nisi eum tempore totam velit nobis consectetur eaque! Nulla vel, repellendus esse eligendi consequatur eius hic deleniti voluptatibus, dolorum, magnam iure?</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eligendi vel, dicta modi minus ad ipsum. Suscipit aspernatur deleniti eos, rem nemo laudantium a debitis minima libero natus facere nisi eum tempore totam velit nobis consectetur eaque! Nulla vel, repellendus esse eligendi consequatur eius hic deleniti voluptatibus, dolorum, magnam iure?</li>
+        </ul>
+    </section>
+    <section>
+        <h2>3. 오늘의 저녁 메뉴</h2>
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eligendi vel, dicta modi minus ad ipsum. Suscipit aspernatur deleniti eos, rem nemo laudantium a debitis minima libero natus facere nisi eum tempore totam velit nobis consectetur eaque! Nulla vel, repellendus esse eligendi consequatur eius hic deleniti voluptatibus, dolorum, magnam iure?</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eligendi vel, dicta modi minus ad ipsum. Suscipit aspernatur deleniti eos, rem nemo laudantium a debitis minima libero natus facere nisi eum tempore totam velit nobis consectetur eaque! Nulla vel, repellendus esse eligendi consequatur eius hic deleniti voluptatibus, dolorum, magnam iure?</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eligendi vel, dicta modi minus ad ipsum. Suscipit aspernatur deleniti eos, rem nemo laudantium a debitis minima libero natus facere nisi eum tempore totam velit nobis consectetur eaque! Nulla vel, repellendus esse eligendi consequatur eius hic deleniti voluptatibus, dolorum, magnam iure?</li>
+        </ul>
+    </section>
+</body>
+</html>

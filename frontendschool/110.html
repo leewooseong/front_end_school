@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>oocss1</title>
+<link rel="stylesheet" href="reset.css">
+<style>
+    /* oocss 예시 */
+    /* <!-- oocss 적용 전 --> */
+    .btn1 {
+        /* 공통적으로 들어가는 것들 */
+        /* width: 200px;
+        height: 80px;
+        font-size: 30px; */
+        
+        font-weight: bold;
+    }
+    .btn2 {
+        /* 공통적으로 들어가는 것들 */
+        /* width: 200px;
+        height: 80px;
+        font-size: 30px; */
+        background: black;
+        color: #fff;
+        border: 3px dotted #fff
+    }
+    /* <!-- oocss 적용 후 --> */
+    .btn {
+        width: 200px;
+        height: 80px;
+        font-size: 30px;
+    }
+    .btn-close {
+        background: black;
+        color: #fff;
+        border: 3px dotted #fff
+    }
+</style>
+</head>
+<body>
+    <!-- oocss 적용 전 -->
+    <!-- <button type="button" class="btn1"></button>
+    <button type="button" class="btn2"></button> -->
+    <!-- oocss 적용 후 -->
+    <button type="button" class="btn"></button>
+    <button type="button" class="btn btn-close"></button>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 해결방법3 clear-fix</title>
+    <style>
+        /* clear fix */
+        /* 부모 요소에 clear-fix라는 클래스를 가상 요소 클래스로 지정해주는 방식 */
+        /* after: 가장 마지막 요소로 들어가게된다. <-> before는 가장 첫 번째로*/
+        /* after를 사용하는 이유? 
+            A 마크업 문서에서 중요한 내용이 아니라서? + 필요없는 html을 자제하기 위해서 (마크업!) */
+        .clear-fix::after{
+            /* after요소가 inline이기 때문에 block으로 바꿔줘야한다! > clear는 block 요소에만 사용할 수 있기 때문에 */
+            /* clear 속성을 사용하면 형제요소를 인식하게 된다. */
+            display: block;
+            content: '';
+            clear: both;
+        }
+        li {
+            float: left;
+            width: 300px;
+            height: 100px;
+            background: pink;
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="clear-fix">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>
+
+<!-- 
+    ※ clear element 
+       - 해당 면에 부동 요소를 허용하지 않겠다! float 효과를 지우는 것
+       - clear: left; == no floating elements are allowed left, it clears the effects of the float from a previous element
+       - MDN에 block level element에 적용하라고 나와있다.
+       - 모든 관련 부동체(floats)의 마진 경계 아래로까지 요소의 보더 경계를 아래로 내립니다. 이 움직임(이 일어나는 경우)은 마진 상쇄가 일어나지 않도록 합니다.
+       - 링크: https://goddino.tistory.com/66, https://developer.mozilla.org/ko/docs/Web/CSS/clear
+    
+-->

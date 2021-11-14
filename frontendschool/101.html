@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button</title>
+    <style>
+        /* 내코드 */
+        @keyframes raise {
+            from {
+                transform: rotateX(0)
+            }
+
+            to {
+                transform: rotateX(-180deg);
+            }
+        }
+        /* mybutton */
+        .btn {
+            position: relative;
+            height: 100px;
+            width: 200px;
+            margin: 10px;
+            background: white;
+            border: 5px solid cornflowerblue;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: bold;
+            overflow:hidden;
+        }
+
+        .btn::before {
+            display: inline-block;
+            position: absolute;
+            bottom: 0px;
+            left: -5px;
+            width: 200px;
+            height: 100px;
+            content: "";
+            background-color: rgba(20, 20, 200, 0.5);
+            border-top-left-radius: 200px;
+            border-top-right-radius: 200px;
+            transform-origin: bottom;
+            transform: rotateX(90deg);
+            transition: all .5s;
+        }
+
+        .btn:hover::before {
+            transform: rotateX(0);
+        }
+
+
+        div {
+            position: relative;
+            color: white;
+            text-align: center;
+            font-size: 32px;
+            font-weight: 500;
+            margin-bottom: 50px;
+            width: 200px;
+            height: 50px;
+            background-color: chocolate;
+            border: 2px solid black;
+            border-radius: 15px;
+            transition: all 2s;
+            /* 가상요소를 감추는 역할 */
+            /* overflow: hidden; */
+        }
+
+        /* translate, translateX, translateY, rotate, skew, scale */
+        .c1:hover {
+            /* 옆으로 이동 */
+            transform: translateX(100px);
+            transition-timing-function: ease;
+        }
+        /* ease-in, ease-out, ease-in-out은 잘 사용 x */
+        .c2:hover {
+            /* 옆으로 이동 */
+            transform: translateX(100px);
+            transition-timing-function: linear;
+        }
+        .c3:hover {
+            background-color: brown;
+        }
+        .c4:hover {
+            background-color: goldenrod;
+            color: gray;
+        }
+        .c5:hover {
+            transform: scale(1.2);
+            background-color: goldenrod;
+            color: gray;
+        }
+        .c6:hover {
+            width: 1000px;
+            height: 100px;
+        }
+        .c7:hover {
+            width: 250px;
+            letter-spacing: 20px;
+        }
+        .c8:hover {
+            width: 250px;
+            letter-spacing: 20px;
+        }
+        .c9:hover {
+            /* line-height: 50px; */
+            opacity: 0.3;
+        }
+        .c10:hover {
+            border-color: hotpink;
+            border-width: 20px; 
+        }
+        /* rotate */
+        .c11:hover {
+            transform: rotate(20deg);
+        }
+        .c12:hover {
+            /* 회전 축을 지정하는 것 */
+            transform: rotate(20deg);
+            transform-origin: top;
+        }
+        .c13:hover {
+            transform: rotate(20deg);
+            transform-origin: right;
+        }
+        .c14:hover {
+            transform: rotate(20deg);
+            transform-origin: left;
+            
+        }
+        .c15:hover {
+            transform: rotate(20deg);
+            transform-origin: bottom;
+
+        }
+        .c16::before {
+            content:'';
+            position: absolute;
+            background-color: white;
+            /* width, height 안쓰고 100% 차지하는 방법 */
+            /* top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0; */
+            width: 200px;
+            height: 10px;
+            left:0;
+            bottom:0;
+            transform: translateX(-300px);
+            transition: all 1s;
+        }
+        .c16:hover::before {
+            transform: translateX(0);
+        }
+        .c17::before {
+            content:'';
+            position: absolute;
+            background-color: black;
+            width: 200px;
+            height: 10px;
+            left:0;
+            bottom:0;
+            transform: translateX(-300px);
+            transition: all 1s;
+        }
+        /* 순서 틀리면 안됨! .c17::before:hover (x) */
+        .c17:hover::before {
+            transform: translateX(0);
+        }
+        .c17::after {
+            content:'';
+            position: absolute;
+            background-color: black;
+            width: 200px;
+            height: 10px;
+            left:0;
+            bottom:0;
+            transform: translateX(300px);
+            transition: all 1s;
+        }
+        .c17:hover::after {
+            transform: translateX(0);
+        }
+        .c18::before {
+            content:'';
+            position: absolute;
+            background-color: black;
+            width: 200px;
+            height: 10px;
+            left:0;
+            bottom:0;
+            transform: translateX(-300px);
+            transition: all 1s;
+        }
+        .c18:hover::before {
+            transform: translateX(0);
+        }
+        .c18::after {
+            content:'';
+            position: absolute;
+            background-color: black;
+            width: 200px;
+            height: 10px;
+            right:0;
+            top:0;
+            transform: translateX(300px);
+            transition: all 1s;
+        }
+        .c18:hover::after {
+            transform: translateX(0);
+        }
+        /* 수직으로 누워있는 걸 세워주는 것 */
+        .c19::before {
+            content:'';
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height: 100%;
+            background-color: greenyellow;
+            transition: all .5s;
+            transform: rotateX(90deg);
+        }
+        .c19:hover::before {
+            transform: rotateX(0);
+            z-index: -1;
+        }
+        .c19::after {
+            content:'';
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height: 100%;
+            background-color: greenyellow;
+            transition: all .5s;
+            transform: rotateY(90deg);
+        }
+        .c19:hover::after {
+            transform: rotateY(0);
+            z-index: -1;
+        }
+        
+        .c19:hover {
+            color: tomato;
+            z-index: 1;
+        }
+        /* after는 중첩할 수 있을까 */
+        .c20::after {
+            content: 'a';
+        }
+        .c20::after::after {
+            content: 'b';
+        }
+        .c20::after::after::after {
+            content: 'c';
+        }
+        .c21::before {
+            position: absolute;
+            content: 'Hello Word!';
+            color: white;
+            background-color: tomato;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-100%);
+            transition: all .5s;
+        }
+        .c21:hover::before {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="c1">ease</div>
+    <div class="c2">linear</div>
+    <div class="c3">b-color</div>
+    <div class="c4">b+f-color</div>
+    <div class="c5">scale</div>
+    <div class="c6">size</div>
+    <div class="c7">글자간격</div>
+    <div class="c8">letter</div>
+    <div class="c9">opacity</div>
+    <!-- 얘는 border가 굵어지면서 내부의 border-radius가 죽는다. -->
+    <div class="c10">border</div>
+    <div class="c11">rotate</div>
+    <div class="c12">rotate top</div>
+    <div class="c13">rotate right</div>
+    <div class="c14">rotate left</div>
+    <div class="c15">rotatebottom</div>
+    <div class="c16">가상요소사용</div>
+    <div class="c17">가상요소사용</div>
+    <div class="c18">가상요소사용</div>
+    <div class="c19">가상요소사용</div>
+    <div class="c20">hello</div>
+    <div class="c21">up</div>
+
+    <!-- 내코드 -->
+    <!-- before에서 잡았던 걸 hover시 올려주는 것  -->
+    <!-- hover/before/transform/animation(부가사항)/transition -->
+    <button class="btn">Click Me :)</button>
+</body>
+
+</html>

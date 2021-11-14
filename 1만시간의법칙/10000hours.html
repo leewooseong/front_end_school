@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/10000hours.css">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <title>1만 시간의 법칙 클론 사이트</title>
+</head>
+
+<body>
+    <!-- tab을 통한 이동 요소 만들어주기 -->
+    <!-- 본문 section -->
+    <section>
+        <h1 class="sr-only">1만 시간의 법칙</h1>
+        <!-- header는 section 안에 있어야하기 때문에? section 안에 배치-->
+        <header class="head-img">
+            <h2 class="sr-only">1만 시간의 법칙 머릿글</h2>
+            <img class="head-img-front" src="/img/title.png" alt="1만 시간의 법칙 머릿글 이미지">
+            <img class="head-img-back" src="/img/clock.png" alt="">
+        </header>
+        <!-- 설명 + 입력이 들어갈 폼 + 결과 section -->
+        <main class="content-main">
+
+            <h2 class="sr-only">나만의 1만 시간의 법칙 구하기</h2>
+            <p class="header-phrases1">"연습은 어제의 당신보다 당신을 더 낫게 만든다."</p>
+            <p class="header-phrases2">
+                <strong>1만 시간의 법칙</strong>은<br>어떤 분야의 전문가가 되기 위해서는<br> 최소한 1만 시간의 훈련이 필요하다는 법칙이다.
+            </p>
+            <!-- 얘는 가상요소로 집어 넣기 -->
+            <!-- <img src="/img/quotes.png" alt=""> -->
+
+            <!-- 입력이 들어갈 폼 -->
+            <section class="main-input">
+                <h3 class="sr-only"> 1만 시간의 법칙 입력하기</h3>
+                <p class="">
+                    나는 <input type="text" placeholder="예)프로그래밍">전문가가 될 것이다.
+                </p>
+                <p>
+                    <span>그래서 앞으로 매일 하루에</span><input type="number" placeholder="예)5시간"><span>시간씩 훈련할
+                        것이다.</span>
+                </p>
+                <button type=button>나는 며칠 동안 훈련을 해야 1만 시간이 될까?</button>
+                <!-- 얘도 가상요소로 집어 넣기 -->
+                <!-- <img src="/img/click.png" alt=""> -->
+
+            </section>
+
+            <!-- 결과가 들어갈 section -->
+            <section class="main-result">
+                <h3 class="sr-only">1만 시간의 법칙 결과</h3>
+                <p>당신은 <strong>프로그래밍</strong>전문가가 되기 위해</p>
+                <p>대략 5110일 이상 훈련하셔야 합니다! :)</p>
+                <!-- 뭘로 감싸야할지 몰라서 div tag 사용 -->
+                <div class="button-cont">
+                    <button class="start-button">훈련하러 가기 GO!GO!</button>
+                    <button class="share-button">공유하기</button>
+                </div>
+            </section>
+            <section class="sr-only">
+                <h3 class="sr-only">응원 모달</h3>
+                <p>화이팅!!♥♥♥</p>
+                <p>당신의 꿈을 응원합니다!</p>
+                <img src="/img/licat.png" alt="응원하는 라이켓">
+                <button>종료하고 진짜 훈련하러 가기 GO!GO!</button>
+            </section>
+        </main>
+    </section>
+    <footer>
+        <!-- 헤딩테그가 필요할까? footer는 굳이 줄 필요가 없다. -->
+        <img src="/img/logo.png" alt="위니브 로고">
+        <p>※ 본 서비스 내 이미지 및 콘텐츠의 저작권은 주식회사 WeNiv에 있습니다.<br> 수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다</p>
+    </footer>
+</body>
+
+</html>
+
+<!-- info -->
+<!-- 
+    1. br tag는 스크린 리더 이슈 때문에 쓰면 x
+    - 106.html 참고하기
+
+ -->

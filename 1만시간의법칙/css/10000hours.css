@@ -1,0 +1,254 @@
+@charset "utf-8";
+
+/* font */
+
+@font-face {
+  font-family: "OTEnjoystoriesBA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GmarketSansBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2")
+      format("woff2"),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff")
+      format("woff"),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf")
+      format("opentype");
+}
+
+/* ※ css 작성 순서 및 양식 ※ > 순서는 바뀔 수 있다.*/
+/* reset */
+
+/* utility */
+
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  /* 스크린 리더에 읽히기 위함 */
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* setting */
+
+/* animation */
+
+/* layout */
+
+/* design */
+
+body {
+  background-color: #5b2386;
+}
+
+/* 시계정렬을 어떻게 해야하는 거야;; */
+.head-img {
+  position: relative;
+  width: 1px;
+  height: 270px;
+  margin: 0 auto;
+  margin-top: 219px;
+}
+
+.head-img .head-img-front {
+  /* margin으로 정렬하려고 했으나 일반적인 방법으로는 이미지들이 겹쳐지지 않음! */
+  /* %로 해야하나?? > 이 부분을 어떻게 했을 지..*/
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 564px;
+  height: 112px;
+  z-index: 20;
+}
+
+.head-img .head-img-back {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 265px;
+  height: 265px;
+  z-index: 10;
+}
+
+.content-main {
+  color: white;
+  text-align: center;
+  font-family: GmarketSansMedium;
+}
+
+.header-phrases1 {
+  margin-top: 66px;
+  color: #f5df4d;
+  font-family: OTEnjoystoriesBA;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 40px;
+}
+
+/* 개행작업이 필요 */
+.header-phrases2 {
+  position: relative;
+  margin-top: 78px;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+.header-phrases2 strong {
+  font-size: 24px;
+}
+
+.header-phrases2::before {
+  position: absolute;
+  top: 33px;
+  left: 101px;
+  width: 493px;
+  height: 96px;
+  content: "";
+  background: url("/img/quotes.png") no-repeat;
+}
+
+.main-input {
+  margin-top: 102px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 57px;
+  vertical-align: text-bottom;
+}
+
+.main-input input {
+  width: 228px;
+  height: 57px;
+  border-radius: 7px;
+  margin: 0 17px 0;
+  font-size: 24px;
+  line-height: 24px;
+}
+.main-input input::placeholder {
+  content: "";
+  font-family: GmarketSansMedium;
+  font-style: normal;
+  font-weight: normal;
+  color: #babcbe;
+  text-align: center;
+}
+
+.main-input p + p {
+  margin-top: 27px;
+}
+
+/* 왜 폰트 상속이 안돼지.. */
+.main-input > button {
+  margin-top: 115px;
+  background: #fcee21;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 56px;
+  width: 565px;
+  height: 66px;
+  font-family: GmarketSansBold;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  /* validator 검사에 안잡히면 빼기 */
+  line-height: 24px;
+  color: #5b2386;
+}
+
+.main-input > button::after {
+  /* 여기에 들어가는 속성은 block이 맞나? inline, inline-block은 안되나? */
+  display: block;
+  position: absolute;
+  right: 80px;
+  /* bottom: -20px; */
+  content: "";
+  width: 64px;
+  height: 72px;
+  background-image: url("../img/click.png");
+}
+
+.main-result {
+  margin-top: 147px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.main-result > .button-cont {
+  margin-top: 127px;
+  font-family: GmarketSansBold;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.button-cont > .start-button {
+  width: 356px;
+  height: 66px;
+  background: #fcee21;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 56px;
+  color: #5b2386;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.button-cont > .share-button {
+  width: 191px;
+  height: 66px;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 56px;
+  color: #5b2386;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+footer {
+  margin-top: 137px;
+  margin-bottom: 116px;
+  color: white;
+  font-family: Noto Sans KR;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+}
+
+footer > p {
+  margin-top: 20px;
+}
+
+/* media query */
+/* 어떻게 해야할 지.. 감도 안오네.. */

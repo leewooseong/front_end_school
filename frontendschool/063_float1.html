@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 해결방법1 clear</title>
+    <style>
+        ul {
+            overflow: hidden;
+        }
+        li {
+            height: 100px;
+            background: pink;
+        }
+        li:nth-child(2){
+            background: black;
+            float: left;
+            /* float을 주면 기본적으로 줬던 넓이 높이 값이 사라짐..(inline요소 처럼) > 따라서 별개로 추가해줘야 한다. */
+            width: 100%;
+            /* height는 위에 선언되어 있음 */
+            /* 인라인 요소는 float된 요소를 알아보고 float요소를 피해서 content가 표시된다? */
+        }
+        li:nth-child(3){
+            /* float 해제 시 사용 overflow랑 별개 */
+            /*  clear:both?
+                형제 레벨에서 float된 요소를  확인하기 위해서 clear 속성을 사용*/
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

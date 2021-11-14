@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 테그</title>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: solid 1px black;
+            border-collapse: collapse;
+        }
+        .구분 {width: 10%}
+        .이름 {width: 20%}
+        .가격 {width: 30%}
+        .판매량 {width: 20%}
+    </style>
+</head>
+
+<body>
+    <!-- contents 크기 만큼 테이블이 늘어난다. -->
+    <table>
+        <caption>
+            테이블 설명을 넣는곳
+        </caption>
+        <colgroup>
+            <col class="구분">
+            <col class="이름">
+            <col class="가격">
+            <col class="판매량">
+        </colgroup>
+        <!-- 행1, 데이터를 수직으로 입력하지만 수평(행)으로 표시된다. -->
+        <tr>
+            <!-- th: 자동으로 중앙정렬 되어있음 -->
+            <th>구분</th>
+            <th>책 이름</th>
+            <th>책 가격</th>
+            <th>판매량</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>hello1</td>
+            <td>1000</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>hello2</td>
+            <td>2000</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>hello3</td>
+            <td>3000</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td colspan="3">총 판매량</td>
+            <td>6</td>
+        </tr>
+    </table>
+</body>
+
+</html>

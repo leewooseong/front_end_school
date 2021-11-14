@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/reset.css">
+    <title>algin-self</title>
+    <style>
+        ul {
+            display: flex;
+            /* 전체 높이 중 안에서 flex 정렬을 하기 때문에 높이가 꼭 필요하다! */
+            height: 100vh;
+            align-items: flex-end;
+        }
+        li {
+            width: 50px;
+            height: 50px;
+            background: pink;
+            border: 1px solid black;
+        }
+        .fifth{
+            /* 개별적인 아이템의 정렬에 사용 */
+            align-self: flex-start;
+
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="first">1</li>
+        <li class="second">2</li>
+        <li class="third">3</li>
+        <li class="forth">4</li>
+        <li class="fifth">5</li>
+
+    </ul>
+</body>
+</html>

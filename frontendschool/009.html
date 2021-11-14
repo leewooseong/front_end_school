@@ -1,0 +1,84 @@
+<!-- <!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+
+
+<body>
+    <form action="./009.html" method="get">
+        <!-- input:something -> emmit이 있는 지 확인 -->
+        <!-- name을 안적어주면 url 상에 보낸 데이터가 표시되지 않음-->
+<!--
+        <input type="text" name="" id="">
+        <input type="password" name="" id="">
+        <button type="submit">로그인</button><br>
+
+        <input type="text"><br>
+        <input type="password"><br>
+        <input type="date"><br>
+        <input type="time"><br>
+        <input type="range"><br>
+        <input type="color"><br>
+        <input type="radio"><br>
+        <input type="checkbox"><br>
+        <input type="file"><br>
+        <textarea name="name" rows="8" cols="80"></textarea>
+    </form>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+
+<body>
+    <!-- form 안의 데이터들을 submit이라는 타입의 버튼을 눌렀을 때 action이 가리키는 곳으로 get방식을 이용해 보내준다. -->
+    <!-- get방식은 url로 치는 것과 동일한 것이기 때문에 -->
+    <form action="./009.html" method="get">
+        <!-- input:something -> emmit이 있는 지 확인 -->
+        <!-- label 이름이 있는 것인지 알려주는 것..? -->
+        <label for="one">이름 : </label>
+        <input type="text" name="id" id="one">
+        <label for="two">이름 : </label>
+        <input type="password" name="pw" id="two">
+        <button type="submit">로그인</button><br>
+        
+        <input type="text"><br>
+        <input type="password"><br>
+        <input type="date"><br>
+        <input type="time"><br>
+        <input type="range"><br>
+        <input type="color"><br>
+        <!-- 여러 개 중 하나만 선택할 때 사용하는 것 -->
+        <input type="radio"><br>
+        <!-- 다중 사용을 목적으로 두고 사용할 때 -->
+        <input type="checkbox"><br>
+        <input type="file"><br>
+        <textarea name="name" rows="8" cols="80"></textarea>
+    </form>
+    <!-- select로 선택을 했을 때 url로 name=value(device=iphone) 형식으로 url로 들어가게 된다. -->
+    <!-- 보내야되는 정보는 url을 통해 get 방식으로 보내지니 이점을 이해하자! -->
+    <form action="./009.html" method="get">
+        <label for="myDevice">현재 사용하고 있는 스마트폰의 제조사를 선택해주세요</label>
+        <select name="device" id="myDevice">
+            <option value="iphone">아이폰</option>
+            <option value="galaxy">갤럭시폰</option>
+            <option value="ㅜㅜ">LG폰</option>
+        </select>
+        <button type="submit">선택</button><br>
+    </form>
+</body>
+
+</html>

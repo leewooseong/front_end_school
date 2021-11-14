@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float 실습</title>
+    <style>
+        /* 방법 1. */
+        .clear-fix::after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+
+        .floated-li {
+            float: left;
+            width: 33.333%;
+            height: 100px;
+        }
+
+        .one {
+            background: black;
+            width: 100%;
+            height: 100px;
+        }
+
+        .two {
+            background: green;
+        }
+
+        .three {
+            background: brown;
+        }
+
+        .four {
+            background: purple;
+        }
+
+        .five {
+            width: 100%;
+            height: 100px;
+            background: yellow;
+            /* 방법 2. */
+            clear: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="one"></div>
+        <div class="two floated-li"></div>
+        <div class="three floated-li"></div>
+        <div class="four floated-li"></div>
+        <div class="five"></div>
+    </div>
+
+</body>
+
+</html>

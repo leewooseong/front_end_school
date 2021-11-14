@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>relative</title>
+    <style>
+        .box1 {
+            position: static;
+            background-color: green;
+            color: white;
+            width: 100px;
+            height: 100px;
+        }
+
+        .기준 {
+            position: relative;
+        }
+
+        .box2 {
+            position: absolute;
+            left: 40px;
+            top: 30px;
+            background-color: green;
+            color: white;
+            width: 100px;
+            height: 100px;
+            z-index: 1;
+        }
+
+        .box3 {
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            background-color: aqua;
+            color: white;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        형제들 사이에선 relative 인지 아닌지는 상관없다.
+        부모의 position 값이 중요!
+     -->
+    <div class="box1">box1</div>
+
+    <div class="기준">
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+    </div>
+    <!-- 얼굴 그리는 것을 예시로 생각하기 -->
+    <!-- 얼굴의 위치가 상대적이고 변경될 수 있다면 전체적인 건 움직이기 쉽도록 relative로! 전체 틀! relative는 static이 기준! -->
+    <!-- 얼굴의 위치가 고정된다면 전제적인 건 fixed로! fixed는 body가 기준!  -->
+    <!-- 그 아래로 absolute로 잡으면 전체적으로 움직일 수 있다! -->
+
+</body>

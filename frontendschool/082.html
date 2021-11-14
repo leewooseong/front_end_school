@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자 슬라이드</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <style>
+
+        /* 다시 작성해야 한다... 실패한 코드.. */
+        /* animation 맛보기 */
+        @keyframes 움직여 {
+            /* from {
+                transform: translate(0px, 0px);
+            }
+            to {
+                transform: translate(100px, 0px);
+            } */
+            0% {
+                transform: translate(0px, 0px);
+            }
+            50% {
+                transform: translate(100px, 0px) rotate(360deg);
+            }
+            100% {
+                /* 여기에는 360deg를 적용하지 않아도 다시 돌아오려는 성질 때문에 여기도 회전이 발생 */
+                transform: translate(100px, 100px);
+            }
+            
+        }
+        @keyframes 돌아 {
+            0% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(-20%); 
+            }
+            50% {
+                transform: translateY(-40%);
+            }
+            75% {
+                transform: translateY(-60%);
+            }
+            100% {
+                transform: translateY(-80%);
+            }
+        }
+
+        /* reset */
+        body, h1, h2, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        /* style */
+        body {
+            background: #111;
+            font-family: 'Nanum Pen Script', cursive;
+        }
+
+        .name {
+            margin: 100px;
+            font-size: 50px;
+            text-align: center;
+            color: #999;
+        }
+
+        .name-job {
+            position: relative;
+            height: 100px;
+            line-height: 100px;
+            /* 글자의 높이를 지정함으로써 나머지 글자를 hidden 시킴 */
+            overflow: hidden;
+            color: white;
+        }
+
+        .name-job::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            /* box-shadow: shadow 시작 x좌표, y좌표, 그림자 넓이?, 그림자 넓이2?, 색 */
+            box-shadow: inset 0px 0px 10px 10px #111;
+        }
+
+        .name-job-list {
+            animation: 돌아 5s infinite;
+        }
+
+        /* div {
+            width: 200px;
+            height: 200px;
+            background: #ccc;
+        } */
+
+    </style>
+</head>
+<body>
+    <div class="name">
+        I'm a
+        <div class="name-job">
+            <ul class="name-job-list">
+                <li>Computer Scientist</li>
+                <li>Programmer</li>
+                <li>Tutor</li>
+                <li>Developer</li>
+                <li>Computer Scientist</li>
+            </ul>
+        </div>
+        <h2 class="name-title">Licat</h2>
+    </div>
+</body>
+</html>

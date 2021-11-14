@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/수업코드.css">
+</head>
+
+<body>
+    <!-- 최상위 태그엔 app으로 id주기, 페이지를 대표하는 이름이 들어가기도 한다. -->
+    <main id="app">
+        <h1 class="tit-law">
+            <!-- heading 요소의 텍스트는 alt 값으로 대체 -->
+            <!-- 이미지 텍스트: 이미지지만 텍스트로 구성된 것! -->
+            <!-- 이 방법 말고 flex로 하신 분 방법 찾아보기 -->
+            <img src="./img2/title.png" alt="1만 시간의 법칙" class="img-tit">
+        </h1>
+        <img src="img2/txt_subtitle.png" alt="연습은 어제의 당신보다 당신을 더 낫게 만든다." class="img-txt">
+        <p class="txt-desc">
+            <strong class="tit-desc">1만 시간의 법칙</strong>은<br>
+            어떤 분야의 전문가가 되기 위해서는<br>
+            최소한 1만 시간의 훈련이 필요하다는 법칙이다.
+        </p>
+        <!-- form 안에는 heading tag를 안넣어도 되나? -->
+        <!-- form tag에 대한 회고 필요.. -->
+        <form class="cont-input">
+            <!-- input에 required 넣어주어서 입력이 필요한 것 체크 form tag안에 작성됐기에 가능한 것-->
+            <p class="txt-wannabe">나는<input type="text" placeholder="예) 프로그래밍" required>전문가가 될 것이다.</p>
+            <p class="txt-time">그래서 앞으로 매일 하루에<input type="number" placeholder="예)5시간" required> 시간씩 훈련할 것이다.</p>
+            <button class="btn-exc">나는 며칠 동안 훈련을 해야 1만 시간이 될까?</button>
+        </form>
+        <section class="cont-result">
+            <h2>결과 확인</h2>
+            <p class="txt-wannabe">당신은 <strong>프로그래밍</strong> 전문가가 되기 위해서</p>
+            <p class="txt-time">대략 <strong>5110</strong> 일 이상 훈련하셔야 합니다.</p>
+            <button type="button" class="btn-go">훈련하러 가기 GO!GO!</button>
+            <button type="button" class="btn-share">공유하기</button>
+        </section>
+        <footer class="cont-footer">
+            <img src="/img2/weniv.png" alt="weniv" class="img-footer">
+            <!-- 특수 기호는 html 특수기호를 찾아서 넣어주기 -->
+            <p>&#8251; 본 서비스 내 이미지 및 콘텐츠의 저작권은 주식회사 WeNiv에 있습니다.</p>
+            <p>수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다.</p>
+        </footer>
+    </main>
+</body>
+
+</html>
+
+<!-- class 명 짓기 -->
+<!-- 
+    1. text class를 줄 때 이번과 같은 경우는 모든 텍스트가 동일한 사이즈, 스타일을 가지고 있으므로 이를 위에 한번 적어서 공통으로 적용한다. 
+    2. 부모 클래스를 타고 지정했을 때 혼자 지목될 수 있는 것은 클래스명을 별도로 표기해주지 않아도 된다.
+-->

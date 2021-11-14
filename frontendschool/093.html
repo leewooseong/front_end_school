@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        @keyframes hojun {
+          from{
+            background-position: 0px, 0px;
+          }
+          to {
+            background-position: -3730px, 0;
+          }
+        }
+
+        
+        .building1{
+          width: 110px;
+          height: 180px;
+          background: url(./images/building/building1.png) no-repeat;
+          /* 이미지를 끊어서 보여주면서 애니메이션 처럼 보여준다. */
+          /* animation: hojun 5s steps(33); */
+          animation: hojun 5s;
+          /* 애니메이션이 끝났을 때 멈춰주는 효과 */
+          animation-fill-mode: forwards;
+        }
+        </style>
+      </head>
+      <body>
+        <div class="building1"></div>
+      </body>
+</html>

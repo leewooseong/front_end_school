@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자신만의 캐릭터 만들기</title>
+    <style>
+        .character {
+            position: relative;
+            top: 200px;
+            left: 200px;
+        }
+        /* 태그[속성이름=값] */
+        div[class="hair"] {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+
+        }
+        /* 태그[속성이름~="값"] 단어찾기 */
+        div[class~="hair-shape"] {
+            border-radius: 30%;
+        }
+        .hair1 {
+            border: 8px solid black;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: -36px;
+            left: 63px;
+            background: red;
+            transform: rotate(20deg);
+        }
+        .hair2 {
+            border: 7px solid black;
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 36px;
+            left: -8px;
+            background: yellow;
+            transform: rotate(-6deg);
+        }
+        .hair3 {
+            border: 7px solid black;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 119px;
+            left: -39px;
+            background: greenyellow;
+            transform: rotate(-22deg);
+        }
+        .face {
+            position:relative;
+            background: rgba(89, 150, 105, 1);
+            border: 10px solid black;
+            width: 400px;
+            height: 400px;
+            border-top-left-radius: 122%;
+            border-top-right-radius: 57%;
+            border-bottom-left-radius: 95%;
+            border-bottom-right-radius: 84%;
+        }
+        .nose1{
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            left: 322px;
+            top: 10px;
+            background: black;
+            border-top-left-radius: 100%;
+            border-top-right-radius: 70%;
+            border-bottom-left-radius: 100%;
+            border-bottom-right-radius: 100%;
+        }
+        .nose2{
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            left: 352px;
+            top: 10px;
+            background: black;
+            border-top-left-radius: 70%;
+            border-top-right-radius: 100%;
+            border-bottom-left-radius: 100%;
+            border-bottom-right-radius: 100%;
+        }
+        .sunglasses {
+            position: absolute;
+            top: 17px;
+            left: 64px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .sunglass-right {
+            position: absolute;
+            width: 150px;
+            height: 75px;
+            border: 5px solid black;
+            border-top-right-radius: 180px;
+            border-top-left-radius: 200px;
+            background: linear-gradient(to bottom left, #656769 50%, #87898c 50%);
+            transform: rotate(-200deg)
+        }
+        .sunglass-right:after{
+            content: "";
+            position: absolute;
+            left: -16px;
+            bottom: -7px;
+            width: 20px;
+            height: 20px;
+            border: 5px solid black;
+            border-radius: 100%;
+            background: rgba(89, 150, 105, 1);
+        }
+        .sunglass-middle {
+            position: absolute;
+            top: -18px;
+            left: 139px;
+            width: 21px;
+            height: 19px;
+            border: 0px black dashed;
+            border-radius: 15px;
+            background: rgba(89, 150, 105, 1);
+            
+        }
+        .mouth{
+            position: absolute;
+            top: 103px;
+            left: 192px;
+            width: 150px;
+            height: 150px;
+            border: 10px black solid;
+            border-top-left-radius: 118%;
+            border-top-right-radius: 100%;
+            border-bottom-left-radius: 200%;
+            border-bottom-right-radius: 100%;
+            /* background: linear-gradient(to bottom right, #8e4343 50%, #f75656 50%); */
+            background: #f75656;
+        }
+        .teeth{
+            position: absolute;
+            top: -7px;
+            left: 97px;
+            width: 0px;
+            height: 0px;
+            border-top: 12px transparent solid;
+            border-left: 20px white solid;
+            border-bottom: 20px transparent solid;
+            transform:rotate(-30deg);
+            /* border-top-left-radius: 118%;
+            border-top-right-radius: 100%;
+            border-bottom-left-radius: 200%;
+            border-bottom-right-radius: 100%; */
+            /* background: linear-gradient(to bottom right, #8e4343 50%, #f75656 50%); */
+            /* background: white; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="character">
+        <div class="hair">
+            <div class="hair-shape hair1"></div>
+            <div class="hair-shape hair2"></div>
+            <div class="hair-shape hair3"></div>
+        </div>
+        <div class="face">
+            <div class="sunglasses">
+                <div class="sunglass-right"></div>
+                <div class="sunglass-middle"></div>
+            </div>
+            <div class="nose1"></div>
+            <div class="nose2"></div>
+            <div class="mouth">
+                <div class="teeth"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

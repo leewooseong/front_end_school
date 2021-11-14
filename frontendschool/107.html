@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /* 프린트화면에서만 바뀌는 코드 */
+        @media print {
+
+            /* html에 없는 가상요소를 생성 */
+            abbr::after {
+                /* attr() : css 속성 함수입니다. 해당 속성 값을 불러오는 것 */
+                /* abbr의 title 속성을 불러와서 content 값으로 넣는 것. */
+                content: ' ('attr(title)')'
+            }
+        }
+
+        /* 1px에 화소가 2개가 들어가는 화면에서는 요렇게 해주세요~ 라는 뜻*/
+        @media screen and (-webkit-device-pixel-ratio : 2) {
+            body {
+                background: royalblue;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <abbr title="world wide web consotium">w3c</abbr>
+</body>
+
+</html>

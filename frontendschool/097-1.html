@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고스톱</title>
+    <style>
+        .scene{
+            width: 200px;
+            height: 260px;
+            perspective: 600px;
+        }
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 3s;
+            transform-style: preserve-3d;
+            transform-origin: center right;  
+        }
+        .card__face {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backface-visibility:hidden;
+        }
+        
+        .card__face--front {
+            background: red;
+        }
+        .card__face--back {
+            background: blue;
+            transform: rotateY(180deg);
+        }
+
+        .card__face--front:active {
+            transform: translateX(-100%) rotateY(180deg);
+        }
+        /* .card.is-flipped {
+            transform: rotateY(180deg);
+        } */
+        
+
+    </style>
+</head>
+<body>
+    <div class="scene">
+        <div class="card">
+            <div class="card__face card__face--front"></div>
+            <div class="card__face card__face--back"></div>
+        </div>
+    </div>
+</body>
+</html>

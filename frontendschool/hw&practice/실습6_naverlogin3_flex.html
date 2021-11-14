@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/reset.css">
+    <title>Naver Login</title>
+    <style>
+        article {
+            background: #f7f9fa;
+            border: 1px solid #dae1e6;
+            margin: 10px;
+            padding: 20px;
+        }
+        p {
+            font-size: 14px;
+            color: gray;
+        }
+        /* login-button */
+        .login-button {
+            cursor: url(www.naver.com),pointer;
+            margin-top: 11px;
+            padding: 15px 0;
+            width: 100%;
+            background: #19ce60;
+            border: none;
+            font-size: 15px;
+            line-height: 15px;
+        }
+        .login-button img {
+            width: auto;
+            height: 15px;
+            padding-right: 5px;
+            vertical-align: -1px;
+        }
+        .login-button a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* user-auth */
+        .user-auth {
+            font-size: 14px;
+        }
+
+        .user-auth a {
+            text-decoration: none;
+            color: #2e2e2e;    
+        }
+
+        .user-auth{
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        /* 의미없는 태그들을 다 가상 클래스로 처리 */
+        /* 자물쇠 이미지 삽입 */
+        .find-info > #find-id::before {
+            display: inline-block;
+            content:'';
+            margin: 1px 3px 1px 1px;
+            background-image: url("images/lock.png");
+            background-size: 100% 100%;
+            height: 14px;
+            width: 10px;
+        }
+        /* 중간점 삽입 */
+        .find-info > #find-id::after {
+            content:'\00B7';
+            display: inline-block;
+            font-size: 15px; 
+            font-weight: bold;
+            margin: 0 3px;
+        }
+        /* 사용자 이미지 삽입 */
+        .user-auth .enroll::before{
+            content: '';
+            display: inline-block;
+            margin: 2px 5px 0 0;
+            background-image: url("images/user.png");
+            /* 얘는 가상요소 안의 이미지의 크기 */
+            background-size: 100% 100%;
+            /* 얘는 가상요소 전체의 크기 */
+            width: 13px;
+            height: 13px;
+        }
+    </style>
+</head>
+<!-- 
+    개발 순서
+1. markup
+2. after요소로 쓸 가상 클래스가 없는 지 확인하면서 mark up 진행하기(쓰긴 써야하지만 의미 없는 태그를 쓰지는 않았는지..)
+3. styling
+-->
+
+<body>
+    <article>
+        <p>네이버를 더 안전하고 편리하게 이용하세요</p>
+        <button class="login-button"><img src="/hw&practice/images/title.png" alt="Naver"><a href="#">로그인</a></button>
+        <section class="user-auth">
+            <p class="find-info">
+                <a id="find-id" href="#">아이디</a><a id="find-pw" href="#">비밀번호 찾기</a>
+            </p>
+            <p class="enroll">
+                <a href="#">회원가입</a>
+            </p>
+        </section>
+    </article>
+</body>
+
+</html>

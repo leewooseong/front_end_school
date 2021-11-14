@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가변단위</title>
+    <style>
+        .one {
+            height: 200px;
+            width: 50%;
+            background-color: darkblue;
+        }
+
+        .two {
+            height: 100px;
+            width: 50%;
+            background-color: red;
+        }
+
+        .three {
+            height: 100px;
+            width: 50vw;
+            background-color: red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- em, %, rem, vw, vh -->
+    <!-- %: 내 부모가 가진 넓이의 절반, em은 font-size!가 기준 -->
+    <!-- vw, vh: 보이는 화면 넓이(높이)의 절반?, 뚫어버린다.? 같이 커지고 같이 작아진다?  -->
+    <div class="one">
+        <div class="two"></div>
+    </div>
+    <div class="one">
+        <div class="three"></div>
+    </div>
+</body>
+
+</html>

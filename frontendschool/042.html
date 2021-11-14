@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box model</title>
+    <style>
+        /* border, padding, margin은 width, height에 포함되어 있지 않다.  */
+        /* UI에 표현되는 총 넓이랑 width, height를 넓이를 잘 고려해야한다.  */
+        .one {
+            border: 50px solid black;
+            padding: 50px;
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+        
+        .two {
+            /* width, height 넓이로 총 넓이(UI표현 넓이를 사용하려면) */
+            box-sizing: border-box;
+            border: 50px solid black;
+            padding: 50px;
+            width: 200px;
+            height: 200px;
+            background: green;
+        }        
+    </style>
+</head>
+<body>
+    <div class="one">hello</div>
+    <div class="two">hello</div>
+</body>
+</html>
