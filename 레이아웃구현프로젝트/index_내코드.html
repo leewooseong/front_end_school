@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/reset.css">
+    <link rel="stylesheet" href="/style/style.css">
+    <title>정글 시네마 영화 목록</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- 
+        구현사항 
+        1. tab을 통한 요소간 이동 구현
+    -->
+    <!-- 얘는 안보이지만 적어준 것 -->
+    <h1>정글시네마</h1>
+    <!-- main ie 9까지 호환이 안돼서 허허.. 요즘 많이 쓰긴 쓴다. -->
+    <main>
+        <h2>정글 시네마 영화 목록</h2>
+        <header>
+            <!-- 얘도 화면 상은 안보이는 것 -->
+            <h3>영화 정보 목록</h3>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">현재상영영화</a>
+                    </li>
+                    <li>
+                        <a href="#">개봉예정영화</a>
+                    </li>
+                    <li>
+                        <a href="#">박스오피스</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <h3>현재 상영 영화 목록</h3>
+            <ul>
+                <li>
+                    <img width="180px" height="250px" src="/images/movieList/포스터_위니브월드.png" alt="위니브월드 포스터">
+                    <h2>위니브 월드: 새로운 시대</h2>
+                    <!-- key-value 쌍의 내용이기 때문에 dt,dd로 태깅하는게 맞을까?  -->
+                    <dl>
+                        <dt>개요</dt>
+                        <dd>판타지</dd>
+                        <dt>평점</dt>
+                        <dd><img src="images/별점이미지.png" alt="별점">9.05</dd>
+                        <dt>개봉</dt>
+                        <dd>2021.03.27</dd>
+                        <dt>출연</dt>
+                        <dd>라이캣, 소울곰, 개리씨</dd>
+                    </dl>
+                    <button>예매하기</button>
+                    <button><img width="4px" height="5.33px" src="images/movieList/아이콘_재생.png" alt=""> 예고편</button>
+                </li>
+                <li>
+                    <img width="180px" height="250px" src="/images/movieList/포스터_눈떠보니자바.png" alt="">
+                    <h2>눈떠보니 코딩테스트 전...</h2>
+                    <!-- key-value 쌍의 내용이기 때문에 dt,dd로 태깅하는게 맞을까?  -->
+                    <dl>
+                        <dt>개요</dt>
+                        <dd>스릴러</dd>
+                        <dt>평점</dt>
+                        <dd><img src="images/별점이미지.png" alt="별점">8.25
+                        </dd>
+                        <dt>개봉</dt>
+                        <dd>2021.04.01</dd>
+                        <dt>출연</dt>
+                        <dd></dd>
+                    </dl>
+                    <button>예매하기</button>
+                    <button><img width="4px" height="5.33px" src="images/movieList/아이콘_재생.png" alt=""> 예고편</button>
+                </li>
+                <li>
+                    <img width="180px" height="250px" src="/images/movieList/포스터_부트캠프.jpg" alt="">
+                    <h2>파이썬 부트캠프</h2>
+                    <!-- key-value 쌍의 내용이기 때문에 dt,dd로 태깅하는게 맞을까?  -->
+                    <dl>
+                        <dt>개요</dt>
+                        <dd>드라마</dd>
+                        <dt>평점</dt>
+                        <dd><img src="images/별점이미지.png" alt="별점">8.77
+                        </dd>
+                        <dt>개봉</dt>
+                        <dd>2021.04.12</dd>
+                        <dt>출연</dt>
+                        <dd></dd>
+                    </dl>
+                    <button>예매하기</button>
+                    <button><img width="4px" height="5.33px" src="images/movieList/아이콘_재생.png" alt=""> 예고편</button>
+                </li>
+                <li>
+                    <img width="180px" height="250px" src="/images/" alt="">
+                    <h2>파이큐티의 사랑</h2>
+                    <!-- key-value 쌍의 내용이기 때문에 dt,dd로 태깅하는게 맞을까?  -->
+                    <dl>
+                        <dt>개요</dt>
+                        <dd>로맨스</dd>
+                        <dt>평점</dt>
+                        <dd><img src="images/별점이미지.png" alt="별점">8.81</dd>
+                        <dt>개봉</dt>
+                        <dd>2021.04.08</dd>
+                        <dt>출연</dt>
+                        <dd>파이썬, 큐티</dd>
+                    </dl>
+                    <button>예매하기</button>
+                    <button><img width="4px" height="5.33px" src="images/movieList/아이콘_재생.png" alt=""> 예고편</button>
+                </li>
+                <li>
+                    <img width="180px" height="250px" src="/images/movieList/포스터_앤진액스.png" alt="">
+                    <h2>NGINXl의 춤</h2>
+                    <!-- key-value 쌍의 내용이기 때문에 dt,dd로 태깅하는게 맞을까?  -->
+                    <dl>
+                        <dt>개요</dt>
+                        <dd>드라마</dd>
+                        <dt>평점</dt>
+                        <dd><img src="images/별점이미지.png" alt="별점">9.88</dd>
+                        <dt>개봉</dt>
+                        <dd>2021.04.15</dd>
+                        <dt>출연</dt>
+                        <dd>NGINX,노션</dd>
+                    </dl>
+                    <button>예매하기</button>
+                    <button><img width="4px" height="5.33px" src="images/movieList/아이콘_재생.png" alt=""> 예고편</button>
+                </li>
+                <li>
+                    <img width="180px" height="250px" src="/images/movieList/포스터_어쩌다밋업.png" alt="어쩌다밋업">
+                    <h2>어쩌다 밋업</h2>
+                    <!-- key-value 쌍의 내용이기 때문에 dt,dd로 태깅하는게 맞을까?  -->
+                    <dl>
+                        <dt>개요</dt>
+                        <dd>드라마</dd>
+                        <dt>평점</dt>
+                        <dd><img src="images/별점이미지.png" alt="별점">9.25</dd>
+                        <dt>개봉</dt>
+                        <dd>2021.04.17</dd>
+                        <dt>출연</dt>
+                        <dd>라이캣, 자바독, 소울곰</dd>
+                    </dl>
+                    <button>예매하기</button>
+                    <button><img width="4px" height="5.33px" src="images/movieList/아이콘_재생.png" alt="예고편 재생 아이콘">
+                        예고편</button>
+                </li>
+                <li>
+                    <img width="180px" height="250px" src="/images/movieList/포스터_파이게임.jpg" alt="파이게임">
+                    <h2>파이 게임</h2>
+                    <!-- key-value 쌍의 내용이기 때문에 dt,dd로 태깅하는게 맞을까?  -->
+                    <dl>
+                        <dt>개요</dt>
+                        <dd>판타지액션</dd>
+                        <dt>평점</dt>
+                        <dd><img src="images/별점이미지.png" alt="별점">8.56</dd>
+                        <dt>개봉</dt>
+                        <dd>2021.04.05</dd>
+                        <dt>출연</dt>
+                        <dd>개리씨, 파이썬</dd>
+                    </dl>
+                    <button>예매하기</button>
+                    <button><img width="4px" height="5.33px" src="images/movieList/아이콘_재생.png" alt=""> 예고편</button>
+                </li>
+                <li>
+                    <img width="180px" height="250px" src="/images/movieList/포스터_MBIT.png" alt="MBTI">
+                    <h2>MBTI는 내 운명</h2>
+                    <!-- key-value 쌍의 내용이기 때문에 dt,dd로 태깅하는게 맞을까?  -->
+                    <dl>
+                        <dt>개요</dt>
+                        <dd>로맨스</dd>
+                        <dt>평점</dt>
+                        <dd><img src="images/별점이미지.png" alt="별점">9.02</dd>
+                        <dt>개봉</dt>
+                        <dd>2021.04.12</dd>
+                        <dt>출연</dt>
+                        <dd>라이캣, 개리씨, 자바독</dd>
+                    </dl>
+                    <button>예매하기</button>
+                    <button><img width="4px" height="5.33px" src="images/movieList/아이콘_재생.png" alt=""> 예고편</button>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>
