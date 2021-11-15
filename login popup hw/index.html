@@ -7,30 +7,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login PopUp</title>
     <link rel="stylesheet" href="/styles/reset.css">
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/style_flex.css">
+    <!-- <link rel="stylesheet" href="/styles/style_float.css"> -->
     <style>
     </style>
 </head>
 
 <body>
     <main>
-        <article class="start-box sr-only">
+        <!-- <article class="start-box sr-only">
             <h2 class="sr-only">로그인 시작하기</h2>
             <img src="/images/weniv-logo.png" alt="위니브 로고">
             <p>위니브를 더 즐겁고 편리하게 이용하세요.</p>
             <button type="button">로그인</button>
-        </article>
+        </article> -->
         <article class="login-box">
-            <header>
+            <header class="login-box_header clear-fix">
                 <h2>로그인 또는 회원가입</h2>
-                <button type="button" class="login-box_close-btn">
-                    <img src="/images/close.png" alt="로그인 닫기">
+                <button class="login-box_close-btn" type="button">
+                    로그인 닫기
+                    <!-- <img src="/images/close.png" alt="로그인 닫기"> -->
                 </button>
-                </head>
-                <form action="index.html" method="post">
+            </header>
+            <form class="login-box_input" action="index.html" method="post">
+                <p class="login-box_info-txt">위니브에서 여러분의 궁금증을 해결하세요! :)</p>
+                <input type="text" name="" id="" placeholder="아이디" required>
+                <input type="password" name="" id="" placeholder="비밀번호" required>
+                <!-- label 처리로 텍스트 달아주기 -->
+                <!-- <input class="keep-loggedin" type="checkbox" name="keep-loggedin-btn" id="keep-loggedin"> -->
+                <!-- <label for="keep-loggedin">로그인 상태 유지</label> -->
+                <!-- 여기는 수정 필수.. -->
+                <div class="keep-loggedin">
+                    <button type="button" class="keep-loggedin_btn">
+                        <img src="/images/check-box.png"alt="로그인 상태 유지">
+                    </button>
+                    <p>로그인 상태 유지</p>                     
+                </div>
 
-                </form>
-
+                <button class="login-btn">로그인</button>
+            </form>
+            <p class="login-box_find"><a href="#">회원가입</a>
+                <a href="#">아이디/비밀번호 찾기</a></p>
+            <p class="hr-txt">또는</p>
+            <hr>
+            <article class="login-box_sns-login">
+                <!-- 각 이미지들은 가상요소로 처리 -->
+                <button>구글 계정으로 로그인</button>
+                <button>페이스북 계정으로 로그인</button>
+                <button>네이버 계정으로 로그인</button>
+                <button>카카오톡 계정으로 로그인</button>
+            </article>
         </article>
     </main>
 </body>

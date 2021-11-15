@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-4</title>
+    <style>
+        .container-color {
+            background-color: cornsilk;
+            border: 3px solid black;
+            border-radius: 10px;
+            /* flex가 strech 됨을 확일할 수 있다. */
+            height: 300px;
+            margin: 5px;
+            padding: 5px
+        }
+
+        .item-color{
+            background-color: darkcyan;
+            border: solid 3px black;
+            border-radius: 10px;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        /* flex-direction */
+        .container1 {
+            display: flex;
+            /* flex-direction: column; */
+            flex-direction: row;
+        }
+        .item{
+            flex-grow: 1;
+        }
+        
+        /* flex-shrink: 양보의 정도? 수가 높을 수록 양보를 더하는 것 */
+        /* flex-shrink 쓰이는 요소들의 넓이를 역비율로 차지하는 것? */
+        .item:nth-child(1) {
+            flex-basis: 500px;
+            flex-shrink: 1;
+        }        
+        .item:nth-child(2) {
+            flex-basis: 500px;
+            /* 줄어드는 속도가 2배 빠르다. */
+            flex-shrink: 2;
+        }        
+     
+    </style>
+</head>
+<body>
+    display: flex에 flex-shrink 실습
+    <div class="container-color container1">
+        <!-- flex-grow: 전체를 1로 잡고 비율로 크기를 나타내는 것-->
+        <div class="item-color item">1</div>
+        <div class="item-color item">2</div>
+        <div class="item-color item">1</div>
+        <div class="item-color item">1</div>
+    </div>
+
+    <pre>
+        /* Keyword values */
+        flex: auto;
+        flex: initial;
+        flex: none;
+
+        /* One value, unitless number: flex-grow */
+        flex: 2;
+
+        /* One value, length or percentage: flex-basis */
+        flex: 10em;
+        flex: 30%;
+
+        /* Two values: flex-grow | flex-basis */
+        flex: 1 30px;
+
+        /* Two values: flex-grow | flex-shrink */
+        flex: 2 2;
+
+        /* Three values: flex-grow | flex-shrink | flex-basis */
+        flex: 2 2 10%;
+
+        /* Global values */
+        flex: inherit;
+        flex: initial;
+        flex: unset;
+    </pre>
+</body>
+</html>

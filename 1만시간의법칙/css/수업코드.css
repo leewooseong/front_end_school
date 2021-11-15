@@ -99,8 +99,12 @@ body {
 
 /* txt-desc: 총 width == 글자의크기 + 이미지의 크기 + 이미지와 글자 사이의 공백 */
 .txt-desc {
+  position: relative;
+  margin: 0 auto 102px;
   line-height: 24px;
   font-size: 18px;
+  /* 전체 넓이를 잡아주면 가상 요소들이 display: block 성질 때문에 퍼져있던게 모여진다. */
+  width: 493px;
 }
 
 .txt-desc .tit-desc {
@@ -130,4 +134,7 @@ body {
 .txt-desc::after {
   right: 0%;
   background-image: url("../img2/txt-right.png");
+}
+
+.cont-inp {
 }

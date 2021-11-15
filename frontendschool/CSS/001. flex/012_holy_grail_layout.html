@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .section-cont {
+            display: flex;
+            flex-direction: column;
+            border: 3px solid black;
+            border-radius: 50px;
+            overflow: hidden;
+            height: 80vh;
+        }
+
+        /* header */
+        .head-cont {
+            background-color: cornsilk;
+            padding: 0 30px;
+            flex-grow: 1;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 0px;
+            background-color: darkcyan;
+            list-style: none;
+        }
+
+        /* main */
+        .main-cont {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex-grow: 5;
+            background-color: cornsilk;
+        }
+
+        .main-cont article {
+            flex: 7;
+            background-color: darkblue;
+            list-style: none;
+            /* 수정 부분 */
+            /* width: 60%; */
+        }
+
+        .main-cont aside {
+            flex: 3;
+            background-color: darkgrey;
+            list-style: none;
+            /* 수정 부분 */
+            /* width: 40%; */
+        }
+
+        /* footer */
+        .footer-cont {
+            flex-grow: 3;
+            background-color: cornsilk;
+            list-style: none;
+        }
+
+
+        /* media query */
+        @media screen and (max-width:800px) {
+            .main-cont {
+                display: block;
+
+            }
+
+            article {
+                /* 수정 부분 */
+                /* width: 100%; */
+                flex-basis: 100%;
+            }
+
+            aside {
+                /* 수정 부분 */
+                /* width: 100%; */
+                flex-basis: 100%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section-cont">
+        <header class="head-cont">
+            head
+            <ul class="menu">
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+                <li>menu4</li>
+                <li>menu5</li>
+            </ul>
+        </header>
+        <main class="main-cont">
+            <article>
+                <li>article1</li>
+                <li>article2</li>
+                <li>article3</li>
+                <li>article4</li>
+                <li>article5</li>
+            </article>
+            <aside>
+                <li>aside1</li>
+                <li>aside2</li>
+                <li>aside3</li>
+                <li>aside4</li>
+                <li>aside5</li>
+            </aside>
+        </main>
+        <footer class="footer-cont">
+            <li>footer</li>
+            <li>footer</li>
+        </footer>
+    </section>
+</body>
+
+</html>

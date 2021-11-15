@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>br태그를 안쓰고 개행</title>
+    <style>
+        .br{
+            display : block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        개행하는 것에는 이유가 있을 것입니다. 따라서 개행의 목적에 맞게 사용하시는 편을 권장드립니다.
+        때에 따라서는 개행의 목적이 강조라면 strong이나 em으로 개행을 하기도 합니다.(4번째 방법 시 참고)
+    -->
+    <!-- 1. br tag -->
+    <!-- 금지사항 1. 너무 많은 문구 사이에 br tag 남용은 금지사항 -->
+    <p>Lorem ipsum dolor <br> sit amet consectetur <br> adipisicing elit.<br><br> Maxime velit molestiaead ullam, <br> consequatur, similique <br> exercitationem odit vel <br> asperiores explicabo <br> voluptatibus? Accusamus reprehenderit iste eveniet in alias deserunt, voluptate molestiae.</p>
+    <!-- 권장 사항 1. > 모바일에서는 display: none;을 이용해서 br tag 제거 -->
+    <small>본 서비스는 내 이미지 및 콘텐츠의 저작권은 주식회사 Weniv에 있습니다.<br> 수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다.</small>
+    
+    <!-- 2. p tag 이용 -->
+    <p>Lorem, ipsum <span class="br"></span>dolor sit amet consectetur adipisicing elit. <span class="br"></span>Reprehenderit, odio facilis numquam dolorem beatae id labore alias, <span class="br"></span>quis molestiae saepe <span class="br"></span>aspernatur inventore culpa? Itaque doloremque dolorum maxime natus amet dolorem?</p>
+    
+    <!-- 3. br class 사용: 의미 없는 줄바꿈이었다고 하면 의미 없는 tag를 쓰는게 맞지 않겟느냐 -->
+    <!-- 비권장 사항이지만 엄연히 사용사례가 있음, 카카오에선 반대 -->
+    <small>본 서비스는 내 이미지 및 콘텐츠의 저작권은 주식회사 Weniv에 있습니다.<span class="br"></span> 수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다.</small>
+    <!-- white-space : pre-line; in css-->
+
+    <!-- 4. article 넓이 조절을 통한 줄바꿈: 부모에 넓이를 줘서 자연스럽게 줄바꿈 되도록 하는 기법  -->
+    <!-- 색을 바꾸거나 css를 조금 다르게 할 때에도 강조하는 태그 사용 -->
+    <article>
+        <p>Lorem ipsum dolor sit amet <strong>consectetur</strong> adipisicing elit. Perspiciatis pariatur atque deserunt, asperiores est, debitis corporis, natus perferendis voluptate qui tenetur quae eaque? Cum, earum sint? Tenetur magni hic repellat!</p>
+    </article>
+
+</body>
+</html>

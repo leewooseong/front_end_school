@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font-1</title>
+    <style>
+        /* 폰트를 사용할 때는 꼭 저작권들을 찾아보고 사용해야한다. */
+        /* <!-- mdn css at rules 참고하기 --> */
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* 변수명 선언 */
+        /* font 같은 경우 매번 찾아서 써주는 것이 힘들 수 있기 때문에 이렇게 변수로 지정해서 사용한다. */
+        :root {
+            --main-font: GmarketSansMedium
+        }
+
+        p {
+            font-family: var(--main-font);
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque adipisci at quam voluptates aliquid atque odio, a
+        similique pariatur blanditiis, perspiciatis esse molestiae quisquam, molestias eligendi nisi. Ex, accusamus hic?
+    </p>
+</body>
+
+</html>
