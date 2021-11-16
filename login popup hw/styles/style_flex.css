@@ -66,7 +66,7 @@
   flex-direction: column;
   padding: 0 24px;
   width: 520px;
-  height: 712px;
+  /* height: 712px; */ /* 여기부분 돌려놓고 공백 수정하기.. */
   position: absolute;
   left: 50%;
   top: 50%;
@@ -86,6 +86,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
+  padding: 0 24px;
   border-bottom: 1px solid #c4c4c4;
 }
 
@@ -112,8 +113,8 @@
   border-style: none;
 }
 
-/* login-box_input */
 /* login-box_input container */
+
 .login-box_input {
   margin: 24px 24px 30px;
 }
@@ -125,6 +126,8 @@
   margin-bottom: 24px;
 }
 
+/* login-box_input */
+
 .login-box_input input {
   width: 472px;
   height: 50px;
@@ -132,6 +135,15 @@
   box-sizing: border-box;
   border-radius: 5px;
 }
+
+.login-box_input input::placeholder {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #767676;
+  padding-left: 16px;
+}
+
 .login-box_input input[type="text"] {
   margin-bottom: 10px;
 }
@@ -164,6 +176,7 @@
 }
 
 /* login-button */
+
 .login-box_input .login-btn {
   width: 472px;
   height: 50px;
@@ -222,11 +235,14 @@
   background-color: white;
 }
 
+/* sns-buttons */
+
 .login-box_sns-login {
   margin: 29px 24px 26px;
 }
 
 .login-box_sns-login button {
+  position: relative;
   width: 472px;
   height: 50px;
   background-color: white;
@@ -234,8 +250,68 @@
   box-sizing: border-box;
   border-radius: 5px;
   margin-bottom: 10px;
+  padding: 0; /* button default style 제거 */
+  font-size: 16px;
+  line-height: 20px;
+  color: #767676;
 }
 
-.login-box_sns-login button:last-child {
-  margin-bottom: 0;
+.login-box_sns-login .google-btn::before {
+  position: absolute;
+  display: block;
+  content: "";
+  margin-left: 12px;
+  margin-top: -4px;
+  height: 28px;
+  width: 28px;
+  background-image: url("../images/Google__G__Logo\ 1.png");
 }
+
+.login-box_sns-login .facebook-btn {
+  border: 1px solid #2d9cdb;
+}
+
+.login-box_sns-login .facebook-btn::before {
+  position: absolute;
+  display: block;
+  content: "";
+  margin-left: 12px;
+  margin-top: -4px;
+  height: 28px;
+  width: 28px;
+  background-image: url("../images/facebook.png");
+}
+
+.login-box_sns-login .naver-btn {
+  border: 1px solid #00bf18;
+}
+
+.login-box_sns-login .naver-btn::before {
+  position: absolute;
+  display: block;
+  content: "";
+  margin-left: 12px;
+  margin-top: -4px;
+  height: 28px;
+  width: 28px;
+  background: url("../images/naver-logo.png") no-repeat;
+}
+
+.login-box_sns-login .kakao-btn {
+  border: 1px solid #f2c94c;
+}
+
+.login-box_sns-login .kakao-btn::before {
+  position: absolute;
+  display: block;
+  content: "";
+  margin-left: 12px;
+  margin-top: -4px;
+  height: 28px;
+  width: 28px;
+  background-image: url("../images/message-circle.png");
+}
+
+/* .login-box_sns-login button:last-child {
+  margin-bottom: 0px;
+} */

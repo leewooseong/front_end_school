@@ -1,0 +1,26 @@
+.btn-login {
+  width: 100%;
+  padding: 17px 0 15px;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 28px;
+  background-color: #2f80ed;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+}
+
+.btn-close {
+  width: 16px;
+  height: 16px;
+  border: none;
+  /* 버튼의 색상이 부모의 것과 같다면 transparent를 이용해보자! */
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.module-inp .inp-login {
+  display: block;
+  width: 100%;
+  padding: 15px 0 15px 16px;
+}

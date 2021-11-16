@@ -74,20 +74,21 @@
         /* media query */
         @media screen and (max-width:800px) {
             .main-cont {
-                display: block;
-
+                flex-direction: column;
             }
 
             article {
                 /* 수정 부분 */
-                /* width: 100%; */
-                flex-basis: 100%;
+                width: 100%;
+                /* flex-basis: 100%; */
+                /* flex-shrink: 0; */
             }
-
+            
             aside {
                 /* 수정 부분 */
-                /* width: 100%; */
-                flex-basis: 100%;
+                width: 100%;
+                /* flex-basis: 100%; */
+                /* flex-shrink: 0; */
             }
 
         }

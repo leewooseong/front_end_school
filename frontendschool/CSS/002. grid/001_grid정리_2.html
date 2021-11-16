@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-1</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container-color {
+            background-color: cornsilk;
+            border: 3px solid black;
+            border-radius: 10px;
+            /* flex가 strech 됨을 확일할 수 있다. */
+            margin: 5px;
+            padding: 5px
+        }
+
+        .item-color{
+            background-color: darkcyan;
+            border: solid 3px black;
+            border-radius: 10px;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .container {
+            display: grid;
+            gap: 10px;
+            /* 빠르게 작성해야할 때 사용 */
+            /* grid-template-areas:'header header header'
+                                'section section section'
+                                'footer footer footer'; */
+        }
+
+        /* 
+            그리드 트랙: 행 또는 열, 
+            그리드 셀: 한 칸,
+            그리드 라인: 셀 구분 선, 1번부터 시작함    
+        */
+        .header {
+            border: 10px solid tomato;
+            /* grid-area: header; */
+            grid-row: 1/2;
+            grid-column: 1/4;
+        }
+        .section {
+            border: 10px solid darkcyan;
+            grid-area: section;
+        }
+        /* .aside {
+            border: 10px solid darkred;
+            grid-area: aside;
+        } */
+        .footer {
+            border: 10px solid deeppink;
+            grid-area: footer;
+        }
+
+    </style>
+</head>
+<body>
+    display: flex에 flex-shrink 실습
+    <div class="container-color container">
+        <!-- flex-grow: 전체를 1로 잡고 비율로 크기를 나타내는 것-->
+        <div class="item-color item header">header</div>
+        <div class="item-color item section">section</div>
+        <!-- <div class="item-color item aside">aside</div> -->
+        <div class="item-color item footer">footer</div>
+    </div>
+</body>
+</html>

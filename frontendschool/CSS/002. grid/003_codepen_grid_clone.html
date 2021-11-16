@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codepen-clone-1</title>
+    <!-- https://codepen.io/bbozzay/pen/vaPPmw -->
+    <style>
+
+        body{
+            display: flex;
+        }
+
+        header {
+            /* 이거는 축약형! */
+            flex: 1;
+        }
+        
+        /* item board */
+
+        .section-board{
+            /* 이거는 축약형! */
+            flex: 1;
+            transform: rotateX(60deg) rotateY(-10deg) rotateZ(50deg);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        /* item design */
+
+        .board-item{
+            position: relative;
+            top:0;                  /* 초기 값을 주면 성능이 좋아진다는 얘기가 있어서 주는게 좋다. */
+            left:0;                 /* 초기 값을 주면 성능이 좋아진다는 얘기가 있어서 주는게 좋다. */
+            width: 100px;
+            height: 100px;
+            transition: all 1s;     /* 얘 속성은 상속이 되나? */
+        }
+        
+        /* https://s2junn.tistory.com/58 */
+        .board-item:hover{
+            /* transform: translate( 3px, -15px); */        /* transform은 z-index 이슈가 있기 때문에 position으로 대체 */
+            top:-15px;
+            left: -15px;
+            cursor: pointer;
+        }
+        
+        .board-item::after{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            content:'';
+            width: 100px;
+            height: 100px;
+            z-index: -1;
+            background-color: gray;
+            transition: all 1s;
+        }
+        
+        .board-item:hover::after{
+            top:25px;
+            left:25px;
+        }
+
+        .board-item:nth-child(3n){
+            background-color: darkgray;
+        }
+
+        .board-item:nth-child(3n-1){
+            background-color: darkcyan;
+        }
+        
+        .board-item:nth-child(3n-2){
+            background-color: cornsilk;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>codepen 실습</h1>
+    </header>
+    <section class="section-board">
+        <div class="board-item">item</div>
+        <div class="board-item">item</div>
+        <div class="board-item">item</div>
+        <div class="board-item">item</div>
+        <div class="board-item">item</div>
+        <div class="board-item">item</div>
+        <div class="board-item">item</div>
+        <div class="board-item">item</div>
+        <div class="board-item">item</div>
+        <div class="board-item">item</div>
+        <div class="board-item">item</div>
+        <div class="board-item">item</div>
+        <div class="board-item">item</div>
+        <div class="board-item">item</div>
+        <div class="board-item">item</div>
+        <div class="board-item">item</div>
+        <!-- shadow 아이템을 또 만들어야할까 -->
+    </section>
+</body>
+</html>
