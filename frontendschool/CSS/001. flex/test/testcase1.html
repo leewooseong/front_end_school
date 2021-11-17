@@ -1,0 +1,73 @@
+<!-- test case1. -->
+<!-- display: flex 속성일 때 부모요소의 넓이가 100%일 때, 자식요소의 width: 200px을 줘도 150px까지 줄어드는 것을 확인함, 부모의 display속성을 flex가 아닌 다른 값으로 주면 줄어들 지 않는 것을 확인 -->
+<!-- 가설 flex요소로써 사용된다면 width도 flex-shrink를 먹는다? -->
+<!-- flex 안에서는 flex-basis: 크기 + flex-shrink: 숫자로 적용해야 고정크기로 적용됨.. -->
+<!-- width도 마찬가지로 flex 안에서는 width: 크기 + flex-shrink: 숫자로 적용해야 고정크기로 적용됨..-->
+<!-- 왜 이런 현상이 이러나는 걸까요 🤯 세운 가설이 맞는 걸일까요..? flex-shrink가 flex-basis의-->
+
+<!-- width와 shrink? -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        .cont {
+            /* test-case 1. */
+            background-color: cornsilk;
+            display: flex;
+            flex-wrap: wrap;
+            /* display: inline-block; */
+            /* display: block; */
+            height: 500px;
+        }
+        .cont .div1 {
+            background-color: darkcyan;
+            width:200px;
+            /* flex-basis: 200px; */
+            flex-shrink: 0;  
+        }
+        .cont .div2 {
+            background-color: goldenrod;
+            /* width:200px; */
+            flex-basis: 200px;
+            /* flex-shrink: 0; */
+        }
+        
+        .cont .div3 {
+            background-color: salmon;
+            /* width:200px; */
+            flex-basis: 200px;
+            /* flex-shrink: 0;         */
+        }
+        .cont .div4 {
+            background-color: lightsteelblue;
+            /* width:200px; */
+            flex-basis: 200px;
+            /* flex-shrink: 0;         */
+        }
+        .cont .div5 {
+            background-color: darkseagreen;
+            /* width:200px; */
+            flex-basis: 200px;
+            /* flex-shrink: 0;         */
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="cont">
+        <div class="div1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet magni quam et vel minus, earum distinctio qui illum maxime consectetur laborum sit odio placeat veniam impedit, error amet. Eligendi, fugiat?</div>
+        <div class="div2">div2</div>
+        <div class="div3">div3</div>
+        <div class="div4">div4</div>
+        <!-- <div class="div5">div5</div>-->
+    </div>
+</body>
+
+</html> 

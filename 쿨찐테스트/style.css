@@ -1,0 +1,94 @@
+* {
+  /* font-family: "Gothic A1", sans-serif; */
+  /* font-family: "Nanum Pen Script", cursive; */
+  font-family: "Noto Sans KR", sans-serif;
+  /* font-family: "Roboto", sans-serif; */
+}
+
+/* index.html */
+.landing {
+  background-color: #0d6efd;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.landing h1 {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  padding-bottom: 3px;
+  font-weight: 700;
+}
+
+.landing p {
+  margin-bottom: 2px;
+}
+
+.footer {
+  background-color: #e8eef4;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #7c8081;
+}
+
+/* text.html */
+
+.header {
+  background-color: #0d6efd;
+  height: 10vh;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.header h1 {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  padding-bottom: 3px;
+  font-weight: 700;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 1px #eeeeee;
+  padding: 50px 0;
+}
+
+.question h2 {
+  font-weight: 700;
+}
+
+.question p {
+  text-align: center;
+  width: 80%;
+}
+
+/* result.html */
+
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.result img {
+  max-width: 500px;
+  width: 80%;
+}
