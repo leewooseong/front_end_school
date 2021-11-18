@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Vending Machine(ColaCola)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@500;700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/resource/style/reset.css">
+    <link rel="stylesheet" href="/resource/style/style.css">
+</head>
+
+<body>
+    <section class.app>
+        <header>
+            <!-- ir = image replace -->
+            <h1 class="tit-app ir"><img src="resource/img/Logo_img.png" alt="ColaCola"></h1>
+        </header>
+        <main>
+            <h2>자판기 UI</h2>
+            <section class="vanding-machine">
+                <h3>음료 구매하기</h3>
+                <!-- 얘는 flex로 처리? flex 레이아웃 적용해보기, 크기가 늘어나도 잘 적용될 수 있도록 -->
+                <ul>
+                    <li>
+                        <button class="drink-button">
+                            <img src="./resource/img/Original_Cola.png" alt="오리지널 콜라">
+                            <strong>Original_Cola</strong>
+                            <span>1000원</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="drink-button">
+                            <img src="./resource/img/Violet_Cola.png" alt="바이올렛 콜라">
+                            <strong>Violet_Cola</strong>
+                            <span>1000원</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="drink-button">
+                            <img src="./resource/img/Yellow_Cola.png" alt="옐로우 콜라">
+                            <strong>Yellow_Cola</strong>
+                            <span>1000원</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="drink-button">
+                            <img src="./resource/img/Cool_Cola.png" alt="쿨 콜라">
+                            <strong>Cool_Cola</strong>
+                            <span>1000원</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="drink-button">
+                            <img src="./resource/img/Green_Cola.png" alt="그린 콜라">
+                            <strong>Green_Cola</strong>
+                            <span>1000원</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="drink-button">
+                            <img src="./resource/img/Orange_Cola.png" alt="오렌지 콜라">
+                            <strong>Orange_Cola</strong>
+                            <span>1000원</span>
+                        </button>
+                    </li>
+                </ul>
+                <!--  -->
+                <div><span>잔액:</span> <span>1,000원</span></div>
+                <button>거스름돈 반환</button>
+                <label for="money-input">입금액 입력</label>
+                <input type="number" name="money-input" id="money-input" placeholder="입금액 입력">
+                <button>입금</button>
+
+                <section>
+                    <h4>선택한 음료</h4>
+                    <!-- 스크롤 처리도 필요 + 재활용 가능한 UI로 사용하기 -->
+                    <ol>
+                        <li>
+                            <!-- 이미지 설명이 있으니까 alt값 비우기 -->
+                            <img src="resource/img/Original_Cola.png" alt="">
+                            <span>Original_Cola</span>
+                            <span>1</span>
+                        </li>
+                        <li>
+                            <img src="resource/img/Green_Cola.png" alt="">
+                            <span>Green_Cola</span>
+                            <span>2</span>
+                        </li>
+                    </ol>
+                </section>
+                <button>획득</button>
+            </section>
+            <section>
+                <h3>소지금 및 구매한 음료</h3>
+                <p><span>소지금</span>
+                    <span>2,5000원</span>
+                </p>
+                <section>
+                    <h4>획득한 음료</h4>
+                    <ol>
+                        <li>
+                            <!-- 이미지 설명이 있으니까 alt값 비우기 -->
+                            <img src="resource/img/Original_Cola.png" alt="">
+                            <span>Original_Cola</span>
+                            <span>1</span>
+                        </li>
+                        <li>
+                            <img src="resource/img/Green_Cola.png" alt="">
+                            <span>Green_Cola</span>
+                            <span>2</span>
+                        </li>
+                    </ol>
+                </section>
+                <p>총금액: 9,000원</p>
+            </section>
+
+        </main>
+    </section>
+</body>
+
+</html>

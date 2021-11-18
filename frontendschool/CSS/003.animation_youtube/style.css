@@ -1,0 +1,88 @@
+@keyframes object-rotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    /* 정확히 한바퀴를 돌리라는 의미 */
+    transform: rotateY(-1turn);
+  }
+}
+
+@keyframes scene-rotate {
+  0% {
+    transform: rotateX(10deg) rotateZ(-20deg);
+    /* transform: rotateY(0deg); */
+  }
+  100% {
+    transform: rotateX(10deg) rotateZ(-20deg);
+    /* transform: rotateY(50deg); */
+  }
+}
+
+.planet {
+  width: 100vh;
+  height: 100vh;
+  position: relative;
+  margin: 0 auto;
+}
+
+.orb {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 370px;
+  left: 370px;
+  /* background-color: azure; */
+  background: rgb(255, 248, 228);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 248, 228, 1) 0%,
+    rgba(250, 230, 198, 1) 19%,
+    rgba(251, 226, 112, 1) 35%,
+    rgba(235, 255, 69, 1) 44%,
+    rgba(255, 152, 61, 1) 67%,
+    rgba(219, 178, 124, 1) 85%,
+    rgba(238, 212, 131, 1) 100%
+  );
+  border-radius: 250px;
+  box-shadow: 10px 10px 20px 20px black;
+  transform: rotate(45deg);
+  transform-style: preserve-3d;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scene {
+  /* 얘는 상속이 안된다. 밑에서 달아주는 것이 중요한 포인트! */
+  transform-style: preserve-3d;
+  /* 나중에 회전 */
+  /* alternate: 돌다가 다시 원위치로 돌아가서 시작하는 끊김을 없애주기 위해 */
+  animation: scene-rotate 5s linear infinite alternate;
+}
+
+.circle {
+  font-size: 20px;
+  font-weight: bold;
+  /* 나중에 작성 */
+  animation: object-rotate 10s linear infinite;
+  transform-style: preserve-3d;
+}
+.circle .word {
+  transform-style: preserve-3d;
+}
+.circle span {
+  position: absolute;
+  /* 무슨원리인 거야... */
+  /* 글자에 위치에 맞는 각도만큼 각각 돌려준것 */
+  transform: rotateY(calc(var(--char-index) * 12deg)) translateZ(600px);
+}

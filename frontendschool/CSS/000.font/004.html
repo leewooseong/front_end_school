@@ -8,7 +8,7 @@
     <title>font-4</title>
     <!-- 주석된 link(2개)를 사용하는 이유: font 최적화 -->
     <!-- 
-        적어넣기..10:00
+        스크롤을 내릴때 폰트가 깨지는 현사? + 인터넷이 느릴 때는 폰트가 로드되기 전에 글자가 안보이는 현상을 블록하기 위해
      -->
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
@@ -17,7 +17,6 @@
         rel="stylesheet">
     <style>
         /* 폰트를 사용할 때는 꼭 저작권들을 찾아보고 사용해야한다. */
-
        /* google font도 003.html처럼 다운받아 사용할 수 있음! */
        body {
             font-family: sans-serif, Lucida Sans Unicode, arial;
@@ -54,6 +53,7 @@
         document.documentElement.classList.add('blocking-time');
 
         setTimeout(function() {
+            // blocking-time = opacity가 zero
             document.documentElement.classList.remove('blocking-time');
         }, 400)
 

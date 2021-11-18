@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+* {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+/* utility */
+.ir {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+}
+
+body {
+  background-color: #eae8fe;
+}
+
+/* h1 */
+.tit-app {
+  /* position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 386px;
+  height: 38px;
+  margin: 0 auto; */
+}
+
+.tit-app img {
+  /* display: block;
+  width: 100%; */
+}
+
+/* main tag */
+#app {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* vending-machine section */
+.vending-machine {
+  flex-basis: 360px;
+  height: 545px;
+  gap: 28px;
+  padding: 32px 27px;
+  background-color: #ffffff;
+}
+
+.list-item {
+  /* display: grid;
+  gap: 12px;
+  grid-template-columns: 100px 100px 100px; */
+}
+
+.btn-item {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 auto;
+  padding: 11px 0px 9px;
+  border-radius: 10px;
+  width: 94px;
+  height: 130px;
+  font-weight: 500;
+  line-height: 13px;
+  font-size: 9px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 10px; */
+}
+
+.btn-item:hover {
+  /* border: 3px solid #6327fe;
+  text-align: center; */
+}
+
+.btn-item .img-item {
+  /* width: 36px;
+  height: 65px;
+  margin: 6px auto 7px; */
+}
+.btn-item .tit-item {
+}
+
+.btn-item .txt-item {
+  /* display: inline-block;
+  height: 22px;
+  width: 70px;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 12px; */
+}
+
+/* my-info section */
+.my-info {
+  width: 360px;
+  height: 545px;
+  padding: 32px 27px;
+  background-color: #ffffff;
+}
+
+.my-info .cont-mymoney {
+  /* width: 100%;
+  overflow: hidden; */
+}
+
+.my-info cont-mymoney {
+}

@@ -38,11 +38,13 @@
         <img src="./images-login/close.png" alt="로그인 닫기">
     </button>
 
+
     <p>인풋 모듈</p>
+    <!-- form에 들어가야하기 때문에 fieldset으로 묶어서 작성 -->
     <fieldset class="module-inp module-inp-id error">
         <label for="inpId" class="txt-hide">아이디</label>
         <input type="text" class="inp-login" id="inpId" placeholder="아이디">
-        <!-- 이걸 그냥 숨기면 스크린 리더가 읽을 수 있음으로 display:none 처리가 필요! -->
+        <!-- 이걸 그냥 숨기면 스크린 리더가 읽을 수 있음으로 display:none 처리가 필요! > 나중에 js로 다시 보이게하는 처리 필요 -->
         <strong class="inp-error">아이디를 입력해주세요</strong>   <!-- 경고창 용도 -->
     </fieldset>
 

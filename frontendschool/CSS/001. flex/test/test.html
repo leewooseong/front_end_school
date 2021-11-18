@@ -12,7 +12,7 @@
             display: flex;
             /* display: inline-block; */
             /* display: block; */
-            /* flex-wrap: wrap; */
+            flex-wrap: wrap;
             /* width: 100%; */
 
             height: 300px;
@@ -20,26 +20,25 @@
         }
         .cont .div1 {
             background-color: darkcyan;
-            flex: 1 1px 2;
-            /* width:200px; */
-            /* flex-basis: 200px; */
-            /* flex-shrink: 0; */
-            /* flex: 80%;    */
+            flex-basis: 0;
+            width:400px;
+            /* flex-grow: 1; */
         }
         .cont .div2 {
             background-color: darkkhaki;
-            flex-basis: 200px;
-            flex-grow: 1;
-            /* flex: 1 1 0 */
-            /* flex: 1; */
-            /* flex-grow: 1; */
-            /* flex-shrink: 1; */
-            /* width:200px; */
+            flex-basis: 0;
+            width:600px;
+            /* flex-grow: 2; */
         }
 
         @media screen and (max-width: 800px){
             .cont .div1 {
-                /* flex-basis: 100%; */
+                /* width: 100%; */
+                /* flex: 100%; */
+            }
+            .cont .div2 {
+                /* width: 100%;                 */
+                /* flex: 100%; */
             }
         }
     </style>
@@ -86,19 +85,46 @@
 <!-- 2."flex: 숫자 숫자 단위값" 형태로 쓸 수 있다. -->
 <!--    2.1 3중에 1개, 2개 또는 3개 다 써서 flex를 표현할 수 있다. -->
 <!--    2.2 1개만 사용할 때 -->
-<!--        2.2.1 "flex: 1" or "flex: 1px" -->
-<!--        2.2.2 flex: 1: 단위가 없는 값의 첫번째는 flex-grow을 뜻함 -->
-<!--        2.2.3 flex: 1px: 단위가 붙었다면 무조건 flex-basis로 뜻함, flex: 1 1px 2;처럼 중간에 쓰지 않는 이상! basis로 인식-->
+<!--        2.2.1 "flex: 1" or "flex: 1px"
+            2.2.2 flex: 1: 단위가 없는 값의 첫번째는 flex-grow을 뜻함
+                  (flex-grow: 1; flex-shrink: 1; flex-basis: 0%;)
+            2.2.3 flex: 1px: 단위가 붙었다면 무조건 flex-basis로 뜻함, flex: 1 1px 2;처럼 중간에 쓰지 않는 이상! basis로 인식  
+                  (flex-grow: 0; flex-shrink: 1; flex-basis: 1px)
+-->
 <!--    2.3 2개만 사용할 때 -->
-<!--        2.2.1 "flex: 1 1" or "flex: 1px 1" or "flex: 1 1px" -->
-<!--        2.2.2 flex: 1 1: 단위가 없는 값의 첫번째는 flex-grow, 두번째는 flex-shrink을 뜻함 -->
-<!--        2.2.3 flex: 1px 1 or flex: 1 1px: 단위가 붙었다면 무조건 flex-basis로 뜻함, 단위가 없는 건 처음 나온 숫자 값이기 때문에 flex-grow를 뜻함, flex: 1 1px 2;처럼 중간에 쓰지 않는 이상! basis로 인식-->
-<!--    2.4 3개만 사용할 때 -->
-<!--        2.2.1 "flex: 1 1" or "flex: 1px 1" or "flex: 1 1px" -->
-<!--        2.2.2 flex: 1 1: 단위가 없는 값의 첫번째는 flex-grow, 두번째는 flex-shrink을 뜻함 -->
-<!--        2.2.3 flex: 1px 1 or flex: 1 1px: 단위가 붙었다면 무조건 flex-basis로 뜻함, 단위가 없는 건 처음 나온 숫자 값이기 때문에 flex-grow를 뜻함, flex: 1 1px 2;처럼 중간에 쓰지 않는 이상! basis로 인식-->
+<!--        2.2.1 "flex: 1 1" or "flex: 1px 1" or "flex: 1 1px" 
+            2.2.2 flex: 1 1: 단위가 없는 값의 첫번째는 flex-grow, 두번째는 flex-shrink을 뜻함
+                  (flex-grow: 1; flex-shrink: 1; flex-basis: 0%;)  
+            2.2.3 flex: 1px 1 or flex: 1 1px: 단위가 붙었다면 무조건 flex-basis로 뜻함, 단위가 없는 건 처음 나온 숫자 값이기 때문에 flex-grow를 뜻함
+                  (flex-grow: 1; flex-shrink: 1; flex-basis: 1px;)
+-->
+<!--    2.4 3개 사용할 때 -->
+<!--        2.2.1 "flex: 1 1 1px" or "flex: 1px 1 1" or "flex: 1 1px 1"
+            2.2.2 flex: 1 1 1px or 1px 1 1: 단위가 없는 값의 첫번째는 flex-grow, 두번째는 flex-shrink을 뜻함, 단위가 있는 것은 basis
+                  (flex-grow: 1; flex-shrink: 1; flex-basis: 1px;)
+            2.2.3 flex: 1 1px 1: 이 경우는 오류! 
+-->
 
+<!-- 추가 공부 -->
+<!--
+    문제: 
+    코드 중 article과 aside에 있어서 넓이를 줄때 flex:7;과 flex:3;을 통해 넓이를 주었지만
+    미디어 쿼리에서는 width:100%가 주면 미디어쿼리 동작 x
 
-<!-- flex-basis 값이 적용되었는데 wrap 속성이 있으면 shrink가 적용이 안되는 건지..
-wrap이 있으면 wrap속성 우선 적용 후 shrink 적용 > flex 속성간(flex-basis, flex-wrap, flex-grow, flex-shrink 간에 우선순위가 따로 있는지 여쭤보기 )  -->
+    이와 반대되는 경우로 article과 aisde에 flex:7, flex:3 값이 아닌 각각 width: 400px을 주고 
+    미디어 쿼리에서는 flex-basis: 100%로 줬을 때나 width: 100%로 주었을 때는 모두 정삭적으로 동작하는 것을 확인
+
+    문제에서처럼 article과 aisde에서 flex:7;과 flex:3;을 줬다면 
+    미디어 쿼리를 적용하기위해선 flex-basis:100%로 주거나 min-width:100%를 줘서 flex-basis를 조작해 적용할 수 있음
+
+    학습과 테스트를 통해서
+    flex: 7;은 flex-grow: 7; flex-shrink: 1; flex-basis:0%; 값으로 적용된다는 것과
+    적용되는 flex-basis는 width 값보다 작다면 flex-요소는 width값을 자신의 크기로 반영한다는 것을 확인
+    flex-wrap으로 wrapping이 되는 기준이 flex-basis나 width가 윈도우너비(혹은 높이)보다 커졌을 때 flex container를 wrapping하는 것으로 알게 됨
+
+    위 코드는 article과 aside에 flex-basis: 0;와 width가 100%가 둘 다 적용되어져 있는 상항인데
+    이 상황의 경우 flex 요소의 크기는 width: 100%가 적용되어 wrapping 처리가 되어야할 것 같은데
+    왜 동작하지 않는 것일까..
+ -->
+
 
