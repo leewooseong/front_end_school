@@ -15,6 +15,17 @@ body {
   background-color: #eae8fe;
 }
 
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0 28px;
+  padding-top: 247px;
+  margin: 0 auto;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
 #app .vending-machine,
 #app .my-info {
   width: 360px;

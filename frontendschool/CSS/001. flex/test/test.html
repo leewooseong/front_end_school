@@ -9,25 +9,25 @@
     <style>
         .cont {
             /* test-case 1. */
-            display: flex;
+            display: block;
             /* display: inline-block; */
             /* display: block; */
-            flex-wrap: wrap;
+            /* flex-wrap: wrap; */
             /* width: 100%; */
 
-            height: 300px;
+            height: 100px;
             background-color: cornsilk;
         }
         .cont .div1 {
             background-color: darkcyan;
-            flex-basis: 0;
+            /* flex-basis: 0; */
             width:400px;
             /* flex-grow: 1; */
         }
         .cont .div2 {
             background-color: darkkhaki;
-            flex-basis: 0;
-            width:600px;
+            /* flex-basis: 0; */
+            width:2000px;
             /* flex-grow: 2; */
         }
 
@@ -46,8 +46,8 @@
 
 <body>
     <div class="cont">
-        <div class="div1">test1</div>
-        <div class="div2">test2</div>
+        <!-- <div class="div1">test1</div> -->
+        <div class="div2">test2ddddddddddddddddddddddddddddddddddddddddddd</div>
     </div>
 </body>
 
@@ -59,10 +59,12 @@
 <!-- flex basis -->
 <!-- 1. flex의 default main axis width는 flex-basis를 이용하면 넓힐 수 있고 이렇게 넓어진 width는 content 넓이까지 줄었다가 다시 basis 넓이까지 다시 늘어났다 할 수 있다.(유동적), 중간에 width나 height가 지정되어 있다면 그 크기까지만 줄었다가 다시 늘어난다. -->
 <!-- main axis에 따라 가로길이를 바꿀지 세로길이를 바꿀지 결정하게 된다(width와의 차이점)-->
-<!-- content > width > flex-basis 순으로 넓이를 적용하게 된다. -->
 <!-- ※ 고정적인 값을 제공하는 width와는 차이가 있다.? 이 의견에 관해선 맞다고는 못할 것 같다 flex-direction: row에서의 flex-container 안에서는 유사하게 동작하기 때문에! -->
 <!--    고정적인 값이라고 생각한다면 main-axis에 상관없이 가로길이가 고정이라고 생각하자!(이 개념이 햇갈렸다!) -->
+<!-- content > width > flex-basis 순으로 넓이를 적용하게 된다. -->
+<!-- flex-basis와 width가 함께 쓰인 곳에는 basis가 우선되기 때문에 width가 무시된다. -->
 <!-- 여기서 content 넓이까지 줄었다가 다시 basis 넓이까지 늘 수 있는 속성은 flex-grow, flex-shrink 속성 덕분인데.. 아래에서 설명하겠다. -->
+
 
 <!-- flex-grow -->
 <!-- 1. flex-grow는 0이 기본 값(즉 basis적용하기 전 기본 display:flex; width를 가지는 것_content 넓이까지만) -->

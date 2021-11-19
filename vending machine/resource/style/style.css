@@ -16,6 +16,13 @@
   border: 0;
 }
 
+html {
+  /* https://velog.io/@leewooseong/REM-EM */
+  /* 폰트 사이즈에 대해 유동적인 레이아웃 제공을 위해서 */
+  /* default font size: 16px -> 10px */
+  font-size: 62.5%;
+}
+
 body {
   background-color: #eae8fe;
 }
@@ -38,8 +45,8 @@ body {
 
 /* main tag */
 #app {
-  height: 100%;
-  width: 100%;
+  margin: 0 auto;
+  width: 74.8rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -48,21 +55,20 @@ body {
 
 /* vending-machine section */
 .vending-machine {
-  flex-basis: 360px;
-  height: 545px;
-  gap: 28px;
+  width: 36rem;
+  height: 54.5rem;
   padding: 32px 27px;
   background-color: #ffffff;
 }
 
 .list-item {
-  /* display: grid;
+  display: grid;
   gap: 12px;
-  grid-template-columns: 100px 100px 100px; */
+  grid-template-columns: 100px 100px 100px;
 }
 
 .btn-item {
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -75,7 +81,7 @@ body {
   line-height: 13px;
   font-size: 9px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
-  border-radius: 10px; */
+  border-radius: 10px;
 }
 
 .btn-item:hover {
@@ -102,10 +108,12 @@ body {
 
 /* my-info section */
 .my-info {
-  width: 360px;
+  width: 36rem;
+
+  /* width: 360px;
   height: 545px;
   padding: 32px 27px;
-  background-color: #ffffff;
+  background-color: #ffffff; */
 }
 
 .my-info .cont-mymoney {
