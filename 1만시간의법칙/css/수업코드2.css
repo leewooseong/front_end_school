@@ -1,16 +1,3 @@
-@charset "utf-8";
-
-/* font */
-
-/* 이 폰트는 폰트 갯수를 줄이기 위해 사진으로 대체 */
-/* @font-face {
-  font-family: "OTEnjoystoriesBA";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-} */
-
 @font-face {
   font-family: "GmarketSansBold";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff")
@@ -39,8 +26,6 @@
       format("opentype");
 }
 
-/* 내가 작성한 코드인지 수업시간에 한 코드인지 확인하기 */
-
 #app {
   font-family: GmarketSansMedium;
   background-color: #5b2386;
@@ -49,139 +34,114 @@
   padding-bottom: 70px;
 }
 
-/* header 부분 */
-/* header */
 .tit-law {
-  /* ***몰랐던 부분: margin-collapse 발생 > 부모 요소와 자식 요소가 존재할 때, 자식 요소의 마진 탑 혹은 바텀 값이 부모의 높이에 영향을 미치지 않는 현상, 부모랑 자식이랑 margin이 겹치는 현상 > 해결방법 notion 참고 */
-  /* 따라서 margin-top은 자식에게 주지 말고 가장 밖의 부모요소에게 주자 */
-  margin-top: 194px;
   display: inline-block;
   position: relative;
+  margin-top: 194px;
 }
 
-/* background clock image: 중앙정렬, 가상요소로 처리 */
+.tit-law .img-tit {
+  position: relative;
+  z-index: 10;
+}
+
 .tit-law::after {
-  /* 이게 inline-block으로 바뀔 때 생기는 img 이슈 나중에 다시 확인하기.. */
   display: block;
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  /* .img-txt에 max-width를 적용할 경우 이미지가 반응형 처럼 커졌다 작아졌다할 수 있지만 background-image에는 적용이 안된다. */
-  /* 가상요소에는 max-width를 적용하기가... 어떻게 처리해야할까 > 질문남겨보기! */
   width: 225px;
   height: 225px;
   margin: -112px 0 0 -112px;
-  background-image: url("/img2/title_bg.png");
-  /* 이미지가 잘리지 않게 width, height에 맞춰주는 것 */
-  background-size: 225px;
+  background-image: url("../images-law/title_bg.png");
+  background-position: center;
 }
 
-/* header main image */
-.tit-law .img-tit {
-  /* z-index를 쓰기 위해선 position 속성이 꼭 필요하다! */
-  /* z-index 10단위 적용: 페이지 많아지고 복잡해지면 길 잃기 쉽다. */
-  position: relative;
-  z-index: 10;
-}
-/* Tip: css 적용하기 전에 개발자 도구를 적극적으로 활용해서 적용된 화면을 보고 css 파일을 고치면 편하다. */
-
-/* 1만시간의 법칙 contents 부분 */
-/* image-text */
 .img-txt {
-  /* 반응형 웹페이지 팁!! width 값을 그냥 주면 줄어들 때 width 아래로는 줄어들지 않는다. > 따라서 max-width를 활용해서 크기가 변할 수 있게 적용한다. */
-  margin: 125px auto 78px;
   max-width: 486px;
+  margin: 125px auto 84px;
 }
 
-/* txt-desc: 총 width == 글자의크기 + 이미지의 크기 + 이미지와 글자 사이의 공백 */
 .txt-desc {
   position: relative;
-  margin: 0 auto 102px;
-  line-height: 24px;
+  max-width: 475px;
+  margin: 0 auto 96px;
+  line-height: 30px;
   font-size: 18px;
-  /* 전체 넓이를 잡아주면 가상 요소들이 display: block 성질 때문에 퍼져있던게 모여진다. */
-  /* 거기다가 제일 부모 요소에 width를 주면서 윈도우가 줄어들어도 넓이를 유지할 수 있다. */
-  /* 반응형만큼 width가 작아지면 width값을 유지하려고해서 스크린 밖으로 요소가 넘어가게된다. 따라서 max-width를 줌으로써 이를 해결할 수 있다.*/
-  max-width: 493px;
 }
-
 .txt-desc .tit-desc {
   font-size: 24px;
   font-weight: bold;
 }
-
-.txt-desc::after,
-.txt-desc::before {
-  display: block;
-  margin-top: -16px;
+.txt-desc::before,
+.txt-desc::after {
   position: absolute;
   top: 50%;
+  display: block;
   content: "";
   width: 37px;
   height: 32px;
+  margin-top: -16px;
 }
-
 .txt-desc::before {
-  /* 가상요소에 block, inline-block, inline 어떤 것을 써야하는가? */
-  /* 답: block, inline-block 두 개는 사용 가능 > 둘의 차이점은 가상요소가 가지는 width정도, block: width 100%, inline-block: 요소의 width 크기 */
-  /* ※ inline은 width와 height를 못가지기 때문에 안되는 것으로 추정 */
-  left: 0%;
-  background-image: url("../img2/txt-left.png");
+  left: 0;
+  background-image: url("../images-law/txt-left.png");
 }
 
 .txt-desc::after {
-  right: 0%;
-  background-image: url("../img2/txt-right.png");
+  right: 0;
+  background-image: url("../images-law/txt-right.png");
 }
 
-.cont-result,
-.cont-input {
+.cont-input,
+.cont-result {
   font-size: 24px;
   line-height: 24px;
 }
-
 .cont-input .txt-wannabe {
   margin-bottom: 30px;
 }
-
 .cont-input .txt-time {
   margin-bottom: 116px;
 }
-
 .cont-input .txt-wannabe input,
 .cont-input .txt-time input {
-  width: 228px;
-  height: 57px;
+  width: 224px;
+  height: 53px;
+  margin: 0 10px;
   border: none;
   border-radius: 7px;
   text-align: center;
   font-size: 24px;
+  vertical-align: 4px;
 }
 
 .cont-input .btn-exc,
 .btn-go,
 .btn-share {
-  /* height는 되도록이면 지정하지 않기! > padding으로 지정!, width는 굳이 필요없어서 제거!*/
   padding: 21px 49px;
+  margin-bottom: 150px;
   font-size: 24px;
   line-height: 24px;
   font-family: GmarketSansBold;
   color: #5b2386;
   background-color: #fcee21;
   border-radius: 56px;
-  border: none;
   cursor: pointer;
+  border: none;
 }
-
+.btn-go,
+.btn-share {
+  margin-bottom: 0;
+}
 .cont-input .btn-exc {
   position: relative;
 }
-
 .cont-input .btn-exc::after {
   display: block;
   position: absolute;
-  right: -80px;
+  right: -72px;
   bottom: -20px;
   content: "";
   width: 64px;
@@ -191,17 +151,17 @@
 
 .cont-result .txt-wannabe,
 .cont-result .txt-time {
-  line-height: 72px;
+  line-height: 68px;
 }
-
+.cont-result {
+  margin-bottom: 130px;
+}
 .cont-result .txt-wannabe {
-  margin-bottom: 17px;
+  margin-bottom: 22px;
 }
-
 .cont-result .txt-time {
   margin-bottom: 127px;
 }
-
 .cont-result .txt-wannabe strong,
 .cont-result .txt-time strong {
   font-size: 72px;
@@ -211,16 +171,7 @@
 
 .btn-share {
   margin-left: 18px;
-  background-color: white;
-}
-
-.blind {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
+  background-color: #fff;
 }
 
 .cont-footer {
@@ -235,8 +186,6 @@
   margin: 0 auto 20px;
 }
 
-/* media-query */
-
 @media screen and (max-width: 360px) {
   #app {
     padding: 0 24px 32px;
@@ -246,12 +195,10 @@
     height: 57px;
     margin-top: 76px;
   }
-
   .tit-law::after {
-    margin: -53px 0 0 -53px;
     width: 106px;
     height: 106px;
-    /* 반응형으로 background-size도 바뀌었기 때문에 반영해 주어야한다. */
+    margin: -53px 0 0 -53px;
     background-size: 106px;
   }
 
@@ -262,24 +209,20 @@
     margin-bottom: 62px;
     font-size: 14px;
   }
-
   .txt-desc .tit-desc {
     font-size: 16px;
   }
-
   .txt-desc::before,
   .txt-desc::after {
     width: 18px;
     height: 15px;
     background-size: 18px 15px;
   }
-
   .cont-input,
   .cont-result {
     font-size: 14px;
     line-height: 14px;
   }
-
   .cont-input .txt-wannabe input,
   .cont-input .txt-time input {
     width: 156px;
@@ -288,19 +231,12 @@
     margin: 0 2px;
     padding: 0;
   }
-
   .cont-input .txt-wannabe {
     margin-bottom: 17px;
   }
-
-  .cont-input .txt-time {
-    margin-bottom: 49px;
-  }
-
   .cont-input .txt-time input {
-    margin-bottom: 17px;
+    margin-top: 17px;
   }
-
   .cont-input .btn-exc {
     width: 280px;
     padding: 19px 36px;
@@ -308,7 +244,6 @@
     line-height: 17px;
     border-radius: 13px;
   }
-
   .cont-input .btn-exc::after {
     width: 43px;
     height: 48px;
@@ -316,7 +251,6 @@
     right: -40px;
     top: 30px;
   }
-
   .cont-result .txt-wannabe strong,
   .cont-result .txt-time strong {
     font-size: 24px;
@@ -327,39 +261,35 @@
   .cont-result .txt-time {
     line-height: 14px;
   }
-
   .cont-input .btn-exc,
   .btn-go,
   .btn-share {
     font-size: 14px;
     padding: 12px 17px;
   }
-
   .btn-share {
     margin-left: 14px;
   }
-
   .cont-footer .img-footer {
     width: 91px;
     height: 18px;
   }
-
   .cont-footer {
     font-size: 9px;
   }
-
   .img-txt {
     margin: 69px auto 62px;
   }
-
+  .cont-input .txt-time {
+    margin-bottom: 49px;
+  }
   .cont-input .btn-exc {
     margin-bottom: 64px;
+    padding: 12px 54px;
   }
-
   .cont-result .txt-time {
     margin-bottom: 55px;
   }
-
   .cont-result {
     margin-bottom: 83px;
   }
