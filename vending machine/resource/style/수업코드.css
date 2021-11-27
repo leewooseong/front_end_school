@@ -71,6 +71,9 @@ body {
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* 자바스크립트 나갔을 때는 on이 붙어서 처리할 수 있도록! */
+/* 테두리 처리하는 것을 가상요소로.. 싄기.. */
+/* + box-shadow로 처리하면 ui해침 없이 테두리를 추가할 수 있다. */
 /* .vending-machine .list-item li.on */
 .vending-machine .list-item li:active::before {
   display: block;
@@ -82,8 +85,11 @@ body {
   left: 0;
   border: 3px solid #6327fe;
   border-radius: 10px;
+  /* 강의에서는 box-shadow로 내부에서 처리 */
+  box-sizing: border-box;
 }
 
+/* sold-out 처리 */
 .vending-machine .list-item li.sold-out::before {
   display: block;
   position: absolute;
@@ -100,4 +106,243 @@ body {
 
 .vending-machine .list-item li.sold-out {
   pointer-events: none;
+}
+
+/* nth-child(3) 이후에 나오는 모든 li */
+.vending-machine .list-item li:nth-child(3) ~ li {
+  margin-top: 12px;
+}
+
+.vending-machine .btn-item {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.vending-machine .list-item .img-item {
+  width: 36px;
+  height: 65px;
+  margin: 0 auto;
+}
+.vending-machine .tit-item {
+  /* 왜 block을 주는가? */
+  display: block;
+  font-size: 9px;
+  margin: 7px auto;
+}
+.btn-item .txt-item {
+  display: inline-block;
+  font-size: 12px;
+  padding: 5px 15px;
+  background-color: #6327fe;
+  border-radius: 50px;
+  color: #fff;
+}
+
+/* 개발 중에는 이렇게 가시 적으로 주석을 다는 것도 좋은 것 같다.  배포할 때는 지워줘야 함*/
+/* 
+      col           colr
+row   잔액,         거스름돈 반환 
+      입금액 입력,  입금
+      획득 리스트,  획득
+
+각각 flex를 주는 방식을 선택
+*/
+
+.vending-machine .cont-return,
+.vending-machine .cont-put,
+.vending-machine .cont-get {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.cont-return .info-balance,
+.cont-put .inp-put,
+.cont-get .list-item-staged {
+  /* % 숫자 값을 직접 계산기로 두드려서 계산하신 것 */
+  width: 65%;
+  padding: 6px 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.cont-return .btn-return,
+.cont-put .btn-put,
+.cont-get .btn-get {
+  /* % 숫자 값을 직접 계산기로 두드려서 계산하신 것 */
+  width: 31%;
+  padding: 6px 8px;
+  font-size: 13px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px rgba(102, 90, 90, 0.5);
+}
+
+.vending-machine .cont-return {
+  margin-top: 20px;
+}
+
+/* 1번 */
+.cont-return .info-balance {
+  /* 갑분싸 overflow hidden? float로 구현할 것이기 때문에 자식의 넓이를 인식할 수 있도록 하기 위해 */
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: #eae8fe;
+}
+/* 내부 텍스트는 float로 오른쪽으로 붙이기 */
+.info-balance .txt-balance {
+  float: right;
+}
+
+/* 3번 */
+.cont-put .inp-put {
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  line-height: 19px;
+}
+
+/* 5번 */
+.cont-get .list-item-staged {
+  height: 106px;
+  overflow-y: scroll;
+  padding: 12px;
+  border: 1px solid #bdbdbd;
+  font-weight: 700;
+  background-color: #eae8fe;
+}
+/* 5번의 아이템 */
+.list-item-staged li {
+  /* 얘도 float의 자식을 만들 수 있도록 */
+  overflow: hidden;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+/* scroll 디자인 넣어서 또 시도해보기 */
+.list-item-staged li + li {
+  margin-top: 6px;
+}
+
+.list-item-staged .img-item,
+.list-item-staged .txt-item {
+  float: left;
+}
+.list-item-staged .img-item {
+  width: 18px;
+  height: 33px;
+}
+.list-item-staged .txt-item {
+  margin-left: 10px;
+  line-height: 33px;
+  font-size: 9px;
+  color: black;
+}
+.list-item-staged .num-counter {
+  float: right;
+}
+
+/* 버튼 내의 내용을 flex로 처리 */
+.list-item-staged .num-counter {
+  float: right;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+/* 6번 */
+.cont-get .btn-get {
+  font-weight: 700;
+  background-color: #6327fe;
+  color: #fff;
+}
+
+#app .my-info {
+  background-color: #eae8fe;
+}
+/* 소지금 */
+.my-info .cont-mymoney {
+  background-color: #fff;
+  padding: 9px 27px;
+}
+.cont-mymoney .info-mymoney {
+  background-color: #eae8fe;
+  padding: 6px 10px;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: #eae8fe;
+}
+
+.cont-mymoney .txt-mymoney {
+  float: right;
+  font-weight: 700;
+}
+
+/* 획득한 음료 */
+.my-info .cont-myitems {
+  margin-top: 20px;
+  padding: 25px 27px;
+  background-color: #fff;
+}
+
+.cont-myitems .tit-myitem {
+  display: block;
+  text-align: center;
+  margin-bottom: 13px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.cont-myitems .list-item-staged {
+  height: 364px;
+  overflow-y: scroll;
+  padding: 12px;
+  background-color: #eae8fe;
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.cont-myitems .txt-total {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+/* 
+and (min-device-width: 320px) 기기의 넓이가 320px 이상 
+and (man-device-width: 480px) 기기의 넓이가 480px 이상 
+and (-webkit-min-device-pixel-ratio: 2) 최소 1px 당 2개의 화소
+
+요런 코드는 회사의 컨벤션이 있기 때문에 이를 따르면 된다.
+*/
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    background-color: #fff;
+  }
+
+  #app {
+    padding-top: 160px;
+  }
+
+  #app .tit-app {
+    width: 332px;
+    height: 142px;
+  }
+
+  .my-info .cont-myitems {
+    margin-top: 0;
+    padding: 31px 27px;
+  }
+  .vending-machine {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
 }

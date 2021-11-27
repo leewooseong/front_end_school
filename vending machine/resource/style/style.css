@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-* {
+body {
   font-family: "Noto Sans KR", sans-serif;
 }
 
@@ -46,25 +46,43 @@ body {
 /* main tag */
 #app {
   margin: 0 auto;
-  width: 74.8rem;
+  /* width: 74.8rem; */
+  width: 748px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 2.8rem;
 }
 
 /* vending-machine section */
-.vending-machine {
+.vending-machine,
+.my-info {
   width: 36rem;
-  height: 54.5rem;
-  padding: 32px 27px;
+  padding: 3.1rem 2.7rem 2.8rem;
+  box-sizing: border-box;
   background-color: #ffffff;
 }
 
 .list-item {
+  margin-left: -0.3rem;
+  margin-top: -0.3rem;
   display: grid;
-  gap: 12px;
-  grid-template-columns: 100px 100px 100px;
+  gap: 0.6rem;
+  grid-template-columns: repeat(3, 10rem);
+  grid-template-rows: repeat(2, 13.6rem);
+}
+
+/* btn-item에 hover시 border를 씌우려고 했는데 복잡해져서 그 상위 요소인 li를 이용 */
+.list-item li {
+  margin: 0.3rem;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 0.4rem rgba(0, 0, 0, 0.5);
+}
+
+.list-item li:hover {
+  border: 0.3rem solid #6327fe;
+  margin: 0;
 }
 
 .btn-item {
@@ -72,38 +90,33 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin: 0 auto;
-  padding: 11px 0px 9px;
-  border-radius: 10px;
-  width: 94px;
-  height: 130px;
+  padding: 0.8rem 0px 0.6rem;
+  width: 9.4rem;
+  height: 13rem;
   font-weight: 500;
-  line-height: 13px;
-  font-size: 9px;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-}
-
-.btn-item:hover {
-  /* border: 3px solid #6327fe;
-  text-align: center; */
+  line-height: 1.3rem;
+  font-size: 0.9rem;
 }
 
 .btn-item .img-item {
-  /* width: 36px;
-  height: 65px;
-  margin: 6px auto 7px; */
+  width: 3.6rem;
+  height: 6.5rem;
+  margin: 0 auto 0.6rem;
 }
 .btn-item .tit-item {
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+  margin-bottom: 0.7rem;
 }
 
 .btn-item .txt-item {
-  /* display: inline-block;
-  height: 22px;
-  width: 70px;
-  font-size: 12px;
-  font-style: normal;
-  line-height: 12px; */
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  color: white;
+  background: #6327fe;
+  border-radius: 5rem;
 }
 
 /* my-info section */
@@ -123,3 +136,7 @@ body {
 
 .my-info cont-mymoney {
 }
+
+/* scroll 디자인 넣어서 또 시도해보기 */
+/* 모듈형으로 디자인해보기 */
+/* focus??? */
