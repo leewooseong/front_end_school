@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+</style>
+</head>
+<body>
+    <script>
+        function randomFunc(min, max){
+            let result = Math.floor(Math.random() * (max - min) + min);
+            return result;
+        }
+        // let lottoArr = [];
+        let lottoSet = new Set();
+        function lottoGenerator() {
+            // while (lottoArr.length < 6) {
+            while (lottoSet.Size < 6) {
+                let result = randomFunc(1, 46);
+                
+                // 방법 1. forEach
+                // let isGot = false;
+                // // 랜덤한 값의 중복 체크 > Set으로 대체?
+                // lottoArr.forEach(element => {
+                //     if(element === result) {
+                //         isGot = true;
+                //     }
+                // });
+                
+                // // 중복이 없다면 배열에 추가
+                // if (isGot) {
+                //     lottoArr.push(result);
+                // }
+
+                //방법 2. includes
+                // if(!lottoArr.includes(result)){
+                //     lottoArr.push(result);
+                // }
+                // // ※ include는 IE에서 돌아가지는 않는다..
+
+                //방법 3. Set
+                lottoSet.add(result);
+                
+            }
+            // return lottoArr;
+            return lottoSet;
+        }
+
+        console.log(lottoGenerator());
+    </script>
+</body>
+</html>

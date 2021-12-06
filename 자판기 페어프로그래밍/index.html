@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vending machine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="resource/style/reset.css">
+    <link rel="stylesheet" href="resource/style/style.css">
+</head>
+
+<body>
+    <section id="app">
+        <!-- 
+            호준님 코드: 
+                1. 이미지 처리 = background 사용
+                2. header tag 사용안하고 h1으로만 처리
+                <h1 class="위치 조정하는 class, 글자 안보이게하는 클래스">colacola</h1>
+                3. 글자 안보이게 하는 클래스에 position 속성을 주고
+                4. 위치 조정하는 class에서 position의 세부적인 위치 조정            
+        -->
+        <header class="title">
+            <!-- 
+                대훈님 코드: 
+                1. 이미지 처리 = img tag
+                2. 필요한 css
+                2.1 위치 조정하는 css
+                2.2 글자 안보이게하는 css? ->  x
+            -->
+                <img src="resource/images/logo.svg" alt="cola 자판기">
+        </header>
+        <section class="bever_items">
+            <h2 class="bm">자판기 메뉴</h2>
+            <ul class="bever_list">
+                <li>
+                    <button class="list_put">
+                        <img src="resource/images/Original_Cola.svg" alt="" class="bever_image">
+                        <strong>Original_Cola</strong>
+                        <p>1000원</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="list_put"> 
+                        <img src="resource/images/Violet_Cola.svg" alt="" class="bever_image">
+                        <strong>Violet_Cola</strong>
+                        <p>1000원</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="list_put">
+                        <img src="resource/images/Yellow_Cola.svg" alt="" class="bever_image">
+                        <strong>Yelllow_Cola</strong>
+                        <p>1000원</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="list_put">
+                        <img src="resource/images/Cool_Cola.svg" alt="" class="bever_image">
+                        <strong>Cool_Cola</strong>
+                        <p>1000원</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="list_put">
+                        <img src="resource/images/Green_Cola.svg" alt="" class="bever_image">
+                        <strong>Green_Cola</strong>
+                        <p>1000원</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="list_put">
+                        <img src="resource/images/Orange_Cola.svg" alt="" class="bever_image">
+                        <strong>Orange_Cola</strong>
+                        <p>1000원</p>
+                    </button>
+                </li>
+            </ul>
+            <p class="bever_remain">
+                "잔액: "
+                <span class="bever_balance">1,000원</span>
+            </p>
+            <button class="bever_return">거스름돈 반환</button>
+            <input type="number" placeholder="입금액 입력">
+            <button class="bever_deposit">입금</button>
+
+            <section class="bever_info">
+                <ul>
+                    <li>
+                        <img src="resource/images/Original_Cola.svg" alt="">
+                        <strong>Original_Cola</strong>
+                        <span>1</span>
+                    </li>
+                    <li>
+                        <img src="resource/images/Green_Cola.svg" alt="">
+                        <strong>Green_Cola</strong>
+                        <span>2</span>
+                    </li>
+                    <li>
+                        <img src="resource/images/Orange_Cola.svg" alt="">
+                        <strong>Orange_Cola</strong>
+                        <span>1</span>
+                    </li>
+                    <li>
+                        <img src="resource/images/Violet_Cola.svg" alt="">
+                        <strong>Violet_Cola</strong>
+                        <span>5</span>
+                    </li>
+                </ul>
+            </section>
+            <button class="bever_obtain">획득</button>
+        </section>
+        <!-- <section class="bever_total">
+            <h2>자판기 소지금 및 획득한 음료</h2>
+            <div>
+                <p class="bever_possession">
+                    <span>소지금</span>
+                    <span>25,000원</span>
+                </p>
+            </div>
+            <p class="bever-info_tit">획득한 음료</p>
+            <section class="bever_info">
+                <ul>
+                    <li>
+                        <img src="resource/images/Original_Cola.svg" alt="">
+                        <strong>Original_Cola</strong>
+                        <span>1</span>
+                    </li>
+                    <li>
+                        <img src="resource/images/Green_Cola.svg" alt="">
+                        <strong>Green_Cola</strong>
+                        <span>2</span>
+                    </li>
+                    <li>
+                        <img src="resource/images/Orange_Cola.svg" alt="">
+                        <strong>Orange_Cola</strong>
+                        <span>1</span>
+                    </li>
+                    <li>
+                        <img src="resource/images/Violet_Cola.svg" alt="">
+                        <strong>Violet_Cola</strong>
+                        <span>5</span>
+                    </li>
+                </ul>
+            </section>
+            <p class="bever_calculate">총금액: 9000원</p>
+        </section>
+    </section> -->
+</body>
+
+</html>
