@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title></title>
+</head>
+
+<body>
+    <h1 id="one">jquery 실습</h1>
+    <p>hello</p>
+    <button class="btn1">클릭해!!</button>
+    <p class="실습">jquery 실습을 하고 있습니다.</p>
+    <img>
+    <textarea name="메모장" id="메모장" cols="30" rows="10"></textarea>
+    <button class="btn2">메모장 내용 경고창으로 출력</button>
+    <p id="p3">hello world</p>
+
+    <!-- 문제 -->
+    <!-- 
+    1. items 부모를 찾아 background-color를 파란색으로 바꿔주세요.
+    2. items 2번째 color를 빨간색으로 바꿔주세요
+    3. ul2의 자식인 li요소를 선택하여 1번부터 3번까지 color를 녹색으로 바꿔주세요.
+    4. ul2의 자식인 li요소를 선택하여 7번부터 10번까지 color를 파란색, background-color를 빨간색으로 바꿔주세요. 
+-->
+    <div class="wrapper">
+        <h1 class="title">TITLE</h1>
+        <ul>
+            <li class="items">item 1</li>
+            <li class="items">item 2</li>
+            <li class="items">item 3</li>
+        </ul>
+    </div>
+    <ul class="ul2">
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+    </ul>
+
+
+
+    <script>
+        // 기존 js
+        // document.getElementById('one').innerHTML = '!!!';
+        // jquery
+        $('#one').text('hello jqeury');
+        // 태그 숨기기
+        // $('p').hide();
+        $('.btn1').click(function () {
+            alert('클릭햇네요?');
+        });
+        // $('.실습').text('실습중이에요!');
+        // $('.실습').text('<strong>실습</strong>중이에요!');
+        $('.실습').html('<strong>실습</strong>중이에요!');
+        $('.실습').css('color', 'red');
+        // 카멜 표기법을 따른다.
+        $('.실습').css('backgroundColor', 'blue');
+        // 스네이크케이스로 쓰면 안먹힌다.
+        // $('.실습').css('background-color','blue');
+        // attribute 쓰는 법
+        // $('img').attr('src', 'a.jpg');
+        $('img').attr('data-name', '프로필').attr('data-hello', 'world');
+        $('img').css('display', 'block');
+        $('.btn2').click(function () {
+            let 메모장값 = $('#메모장').val();
+            $('#메모장').val('값을 입력하세요.');
+            alert(메모장값);
+        });
+        $('#p3').css('color', 'red');
+
+
+        // 문제
+        // jquery의 숫자는 몇부터 시작하는가? 0부터!
+        $('.items').parent().css('backgroundColor', 'blue');
+        $('.items:nth-child(2)').css('color', 'red');
+        $('.ul2 li:nth-child(-n + 3)').css('color','green');
+        // $('.ul2 li:lt(3)').css('color','green');
+        $('.ul2 li:nth-child(n + 7):nth-child(-n + 10)').css('color','blue').css('backgroundColor','red');
+        // $('.ul2 li:gt(6)').css('color','blue').css('backgroundColor','red');
+        // .. 시험치느라 수업을 못들음..
+
+    </script>
+</body>
+
+</html>
