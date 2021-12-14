@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAQA,AAAA,GAAG,CAAC;EANF,SAAS,EAAE,KAAc;EAQzB,KAAK,EAAE,GAAG;CACX;;AAUD,AAAA,KAAK,CAAC;EALJ,SAAS,EAAE,KAAc;EAOvB,KAAK,EAAE,GAAG;CAEb",
+    "sources": [
+        "015_argument.scss"
+    ],
+    "names": [],
+    "file": "015_argument.css"
+}

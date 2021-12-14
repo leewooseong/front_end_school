@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAIA,AAAA,GAAG,CAAC;EACA,SAAS,EAAE,OAAiB;CAC/B",
+    "sources": [
+        "012_연산2.scss"
+    ],
+    "names": [],
+    "file": "012_연산2.css"
+}

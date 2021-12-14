@@ -1,0 +1,10 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    transition: all 0.2s;
+    // hover 쓰는 법!
+    &:hover{
+        background-color: hotpink;
+    }
+}

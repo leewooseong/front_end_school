@@ -1,0 +1,17 @@
+@charset "UTF-8";
+.info {
+  font-size: 15px;
+  line-height: 1.34;
+  text-align: right;
+  /*지역 변수*/
+}
+
+.info span {
+  line-height: 1.34;
+}
+
+/*전역 변수*/
+div {
+  line-height: 1.34;
+}
+/*# sourceMappingURL=010_전역변수.css.map */

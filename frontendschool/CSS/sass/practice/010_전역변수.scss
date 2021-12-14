@@ -1,0 +1,16 @@
+.info{
+	$line-normal : 1.34 !global; // 지역변수
+	font-size : 15px;
+	line-height : $line-normal;
+	text-align : right;
+	/*지역 변수*/
+  span{
+		line-height : $line-normal;
+	}
+}
+
+/*전역 변수*/
+ div {
+    // 얘는 다른 지역에 있기 때문에 안된다는 뜻
+    line-height: $line-normal;
+}

@@ -1,0 +1,16 @@
+//Scss
+//Scss에서도 HTML처럼 계층구조로 스타일을 적용할 수 있다.
+nav{
+	background : #C39BD3;
+	padding : 10px;
+	height: 50px;
+	ul{
+		display: flex;
+		list-style : none;
+		justify-content: flex-end;
+		li{
+			color: white;
+			margin-right: 10px;
+		} 
+	}
+}

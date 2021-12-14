@@ -1,0 +1,15 @@
+//Scss
+.article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    .article-content {
+        font-size: 14px;
+        opacity: 0.7;
+        //   얘는 밖으로 빠져서 표시된다. too much한 중첩내용을 생략할 수 있다!
+        @at-root i {
+            opacity: 0.5;
+        }
+    }
+}

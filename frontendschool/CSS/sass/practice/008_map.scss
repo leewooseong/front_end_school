@@ -1,0 +1,14 @@
+$font-weights: ("regular": 400, "medium": 500, "bold": 700); //글자 굵기 리스트
+$font-sizes: ("h1": 45px, "h2": 19px, "p": 16px);
+
+
+div {
+    font-weight: map-get($font-weights, "medium");
+}
+
+section {
+	h2 {
+		font-size : map-get($font-sizes, "h1");// 500
+	}
+}
+map-get($font-size, "h3");// null

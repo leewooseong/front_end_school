@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,GAAG,CAAC;EACA,SAAS,EAHK,IAAI;CAIrB;;AAED,AAAA,GAAG,CAAC;EACA,SAAS,EAPU,IAAI;CAQ1B",
+    "sources": [
+        "007_list.scss"
+    ],
+    "names": [],
+    "file": "007_list.css"
+}

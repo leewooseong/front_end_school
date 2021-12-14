@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": ";AAAA,AAAA,KAAK,CAAA;EAEJ,SAAS,EAAG,IAAI;EAChB,WAAW,EAFI,IAAI;EAGnB,UAAU,EAAG,KAAK;EAClB,aAAa;CAIb;;AATD,AAME,KANG,CAMH,IAAI,CAAA;EACJ,WAAW,EANG,IAAI;CAOlB;;AAGF,aAAa;AACZ,AAAA,GAAG,CAAC;EAED,WAAW,EAbC,IAAI;CAcnB",
+    "sources": [
+        "010_전역변수.scss"
+    ],
+    "names": [],
+    "file": "010_전역변수.css"
+}

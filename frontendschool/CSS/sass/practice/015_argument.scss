@@ -1,0 +1,26 @@
+// 방법 1 
+@mixin arg-mixin($x, $y){
+  font-size: ($x * $y) + px;
+
+}
+  //background관련 스타일 코드가 들어있다.
+  //mixin의 인수에 따라 조금씩 다른 스타일링이 가능하다.
+
+div {
+  @include arg-mixin(10,10);
+  color: red;
+}
+
+//방법2.
+
+@mixin arg-mixin2($x, $y){
+  font-size: ($x * $y) + px;
+  @content
+
+}
+
+.div2 {
+  @include arg-mixin2(10,10){
+    color: red;
+  }
+}

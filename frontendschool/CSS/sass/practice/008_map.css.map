@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,GAAG,CAAC;EACA,WAAW,EAH2B,GAAG;CAI5C",
+    "sources": [
+        "008_map.scss"
+    ],
+    "names": [],
+    "file": "008_map.css"
+}
