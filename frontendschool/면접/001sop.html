@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>hello! SOP!!!</h1>
+
+    <iframe class="youtube" width="1424" height="652" src="https://www.youtube.com/embed/5tQeSeyUQL0"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+
+    <iframe class="sameOrigin" src="sameOrigin.html" frameborder="0"></iframe>
+
+
+    <script>
+        const pageOther = document.querySelector(".youtube");
+        const pageSame = document.querySelector(".sameOrigin");
+
+        pageOther.onload = function () {
+            console.log("pageOther : ", pageOther.contentDocument);
+        }
+
+        pageSame.onload = function () {
+            console.log("pageSame : ", pageSame.contentDocument);
+            pageSame.contentDocument.body.style.backgroundColor = "red";
+        }
+        // > null을 반환하게 된다. sop 때문에!
+
+        // console.log("pageOther : ", pageOther.contentDocument);
+                // // 얘는 same origin인데 못받아오는 거냐.. > onload 이벤트가 필요
+        // console.log("pageSame : ", pageSame.contentDocument);
+
+
+    </script>
+</body>
+
+</html>
+
+
+<!-- sop가 무엇인가요?
+
+
+sop
+- 동일 출처 정책 same origin policy
+- 출처(프로토콜 호스트 포트)가 다르면 리소스와의 상호작용을 하지 못하게 하는 방식
+
+tag로 임베딩하는 방법은 다른 도메인의 것을 불러올 수 있다. > 리소스도 확인가능..?(강의 내용 확인해보기)
+ex)
+<script src="..."></script>로 추가하는 JavaScript
+<link rel="stylesheet" href=“…">로 추가하는 CSS
+<img>로 표시하는 이미지.
+<video>와 <audio>로 재생하는 미디어.
+@font-face로 적용하는 글씨체.
+<iframe>으로 삽입하는 모든 것. 
+    
+-->
