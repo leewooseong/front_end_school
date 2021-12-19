@@ -1,5 +1,4 @@
-@charset "utf-8";
-
+@charset "UTF-8";
 /* utility */
 /* 요소를 완전히 없애면 안되고.. 글자만 없애는 걸로.. */
 .ir {
@@ -24,6 +23,31 @@ body {
   background-color: #eae8fe;
 }
 
+/* main tag */
+#app {
+  margin: 0 auto;
+  padding-top: 24.7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* 넓이를 지정해주지 않으면 flex-zoom 이슈가 발생하여서 어쩔 수 없이..  */
+  /* 그런데 이렇게 넓이를 지정해주면 wrap이 적용이 안된다.
+    1. flex-wrap: wrap은 container의 width가 content보다 작을 때 wrapping 된다.
+    2. 하지만 width를 쓰게 된다면 width값이 고정이 되기 때문에 max-width로 유동적인 값을 줘야한다.
+    */
+  /* width: 74.8rem; */
+  max-width: 74.8rem;
+  gap: 2.8rem;
+}
+
 /* h1 */
 .tit-app {
   /* position이 생략된 것 */
@@ -31,99 +55,75 @@ body {
   /* transform: translate(-50%, -50%); */
   width: 38.6rem;
   height: 18rem;
-  background: no-repeat 100% 100%/ 100% 100% url(../img/logo.png);
-}
-
-/* main tag */
-#app {
-  margin: 0 auto;
-  padding-top: 24.7rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  /* 넓이를 지정해주지 않으면 flex-zoom 이슈가 발생하여서 어쩔 수 없이..  */
-  /* 그런데 이렇게 넓이를 지정해주면 wrap이 적용이 안된다.
-    1. flex-wrap: wrap은 container의 width가 content보다 작을 때 wrapping 된다.
-    2. 하지만 width를 쓰게 된다면 width값이 고정이 되기 때문에 max-width로 유동적인 값을 줘야한다.
-  */
-  /* width: 74.8rem; */
-  max-width: 74.8rem;
-  gap: 2.8rem;
+  background: no-repeat 100% 100%/100% 100% url(../../img/logo.png);
 }
 
 /* vending-machine section */
 .vending-machine {
   /* width를 적어주지 않아도 내부 content의 width와 margin으로 전체 넓이가 유지됨 */
   /* width: 360px; */
-  padding: 2.8rem 2.7rem 2.8rem;
-  box-sizing: border-box;
+  padding: 2.8rem 2.4rem 2.8rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background-color: #ffffff;
 }
 
 .list-item {
   margin-bottom: 1.7rem;
+  display: -ms-grid;
   display: grid;
   gap: 0.6rem;
-  /* 
-    template-columns, rows: 는 그리드 아이템들의 위치를 선언해주는 것! 전체 넓이 주는 것과 혼동하지 말자. 
-    px을 사용하면 자식(아이템)의 width 값의 합이 부모(컨테이너)의 width로 반영되지만
-    fr을 사용할 경우 부모의 width 값이 없다면?? > 자식의 content width 값 합을 부모의 width로 지정하게된다!
-    ※ fr 은 단순히 비율을 지정하는 것!(가변 크기)    
-  */
-  /* 넓이를 어떻게 잡아주는 것인가? > flex 처럼 요소 */
-  grid-template-columns: 1fr 1fr 1fr;
-  /* grid-template-columns: repeat(3, 50px); */
-  grid-template-rows: 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
 }
 
-/* 
-  btn-item에 hover시 border를 씌우려고 했는데 btn-item에 적용하면 border크기 만큼 들쑥날쑥 해진다 
-  해결 방법으로 li에 border를 씌우는 방법과 box-shadow로 이를 해결하는 방법이 있다.
-*/
-/* 방법1. border만큼 margin을 주고 hover시 이를 border로 대체하기 */
 .list-item li {
   margin: 0.3rem;
   border-radius: 1rem;
-  box-shadow: 0px 0px 0.4rem rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 0.4rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 0.4rem rgba(0, 0, 0, 0.5);
 }
+
 .list-item li:hover {
   border: 0.3rem solid #6327fe;
   margin: 0;
 }
 
-/* 방법2. li의 margin을 지우고 바로 box-shadow로 3px 효과주기*/
-.btn-item:hover {
-  border-radius: 1rem;
-  /* box-shadow: 0px 0px 0 3px #6327fe; */
-}
-/* 방법3. css outline 속성을 통해서도 이를 적용할 수 있다. */
-
 .btn-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0 auto;
   padding: 1.1rem 0px 0.6rem;
-  /* 유동적인 변화를 위해서 height는 지정해주지 않는다. */
-  /* height: 13rem; */
-  /* flex 축이 column이기 때문에 flex-basis는 지정하지 못함 */
   width: 9.4rem;
   font-weight: 500;
   line-height: 1.3rem;
   font-size: 0.9rem;
 }
 
-/* 동적인 이미지?? > 이것까지는 처리 x..*/
+.btn-item:hover {
+  border-radius: 1rem;
+}
+
 .btn-item .img-item {
   width: 3.6rem;
   height: 6.5rem;
   margin: 0 auto 0.6rem;
 }
+
 .btn-item .tit-item {
-  /* 부모 요소에서 flex를 안쓴다면 전체 크기로 잡아주기 위해서 display:block 속성이 필요 */
-  /* display: block; */
   font-size: 0.9rem;
   line-height: 1.3rem;
   margin-bottom: 0.7rem;
@@ -148,9 +148,12 @@ row3     컨테이너    획득
 */
 .control-container {
   /* 넓이를 지정해주지 않으면 display: block처럼 작용 */
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 20rem 9.4rem;
-  grid-template-rows: minmax(0, auto);
+  -ms-grid-columns: 20rem 9.4rem;
+      grid-template-columns: 20rem 9.4rem;
+  -ms-grid-rows: minmax(0, auto);
+      grid-template-rows: minmax(0, auto);
   gap: 1.1rem 1.2rem;
 }
 
@@ -162,6 +165,7 @@ row3     컨테이너    획득
   font-size: 1.4rem;
   line-height: 2rem;
 }
+
 .txt-changes {
   float: right;
 }
@@ -171,6 +175,28 @@ row3     컨테이너    획득
   border: 1px solid #bdbdbd;
   margin-bottom: 0.1rem;
 }
+
+.inp-put::-webkit-input-placeholder {
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: 500;
+  color: #bdbdbd;
+}
+
+.inp-put:-ms-input-placeholder {
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: 500;
+  color: #bdbdbd;
+}
+
+.inp-put::-ms-input-placeholder {
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: 500;
+  color: #bdbdbd;
+}
+
 .inp-put::placeholder {
   font-size: 13px;
   line-height: 19px;
@@ -178,19 +204,21 @@ row3     컨테이너    획득
   color: #bdbdbd;
 }
 
-.btn-changes_return,
-.btn-put {
+.btn-changes_return, .btn-put {
   background: #ffffff;
-  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.25);
   font-size: 1.3rem;
   line-height: 1.9rem;
   border-radius: 0.5rem;
 }
+
 /* 거스름돈 반환 버튼 */
-btn-changes_return {
+.btn-changes_return {
   padding: 0.6rem 0.9rem 0.8rem;
   /* box-sizing: border-box; */
 }
+
 /* 입금 버튼 */
 .btn-put {
   padding: 0.6rem 3.5rem 0.7rem;
@@ -199,58 +227,74 @@ btn-changes_return {
 }
 
 .list-item-staged {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  /* 높이를 지정하는게 좋을까? 아니다 > 획득 버튼의 크기에 따라 자동으로 늘어나도록 만들자!(grid의 특성을 이용) */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   background-color: #eae8fe;
   overflow-y: scroll;
-  /* overflow: hidden; */
-  /* max-height: 54%; */
   height: 10.6rem;
   border-radius: 0.5rem;
   padding: 1.2rem 0.6rem 1.2rem 1.2rem;
   border: 1px solid #bdbdbd;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border-radius: 5px;
-  /* float를 쓰기 위해 > flex로 변경.. 반응형 대처가 너무 힘들다.. */
-  /* overflow: hidden; */
+  /* 스크롤 스타일 */
 }
-/* 스크롤 스타일 */
+
 .list-item-staged::-webkit-scrollbar {
   width: 1.2rem;
   height: 7.9rem;
 }
+
 .list-item-staged::-webkit-scrollbar-thumb {
   height: 17%;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: white;
   /* 스크롤바 둥글게 설정    */
   border: 0.4rem solid #eae8fe;
   border-radius: 1rem;
 }
+
 .item-staged {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0.6rem 0.8rem 0.7rem 1rem;
   background-color: white;
   border-radius: 0.5rem;
   margin-bottom: 0.6rem;
 }
+
 .item-staged:last-child {
   margin-bottom: 0;
 }
+
 .item-staged img {
   width: 1.8rem;
   height: 3.3rem;
   float: left;
 }
+
 .item-staged strong {
   /* margin을 먹이기 위한 display */
   float: left;
   font-size: 0.9rem;
   line-height: 1.3rem;
 }
+
 .item-staged span {
   display: block;
   padding: 0.4rem 1.1rem 0.6rem;
@@ -269,13 +313,19 @@ btn-changes_return {
   color: #ffffff;
   background-color: #6327fe;
   border-radius: 0.5rem;
-  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.5);
 }
 
 /* my-info section */
 .my-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #eae8fe;
 }
 
@@ -283,8 +333,10 @@ btn-changes_return {
   width: 36rem;
   background-color: #ffffff;
   padding: 0.9rem 2.7rem;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
 .my-info .info-mymoney {
   overflow: hidden;
   background-color: #eae8fe;
@@ -293,34 +345,43 @@ btn-changes_return {
   font-size: 1.4rem;
   line-height: 2rem;
 }
+
 .my-info .txt-mymoney {
   float: right;
 }
 
 .my-info .cont-myitems {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 2rem;
   padding: 2.5rem 2.7rem 2.6rem;
   background-color: #ffffff;
 }
 
-.cont-myitems .tit-myitem {
+.my-info .cont-myitems .tit-myitem {
   font-size: 14px;
   font-weight: bold;
   line-height: 20px;
   margin-bottom: 13px;
 }
 
-.cont-myitems .list-item-staged {
+.my-info .cont-myitems .list-item-staged {
   width: 100%;
   height: 36.4rem;
 }
 
-.cont-myitems .txt-total {
+.my-info .cont-myitems .txt-total {
   margin-top: 0.6rem;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   line-height: 2.1rem;
 }
 
@@ -329,49 +390,44 @@ btn-changes_return {
   .ir {
     position: relative;
   }
-
   body {
     background-color: #ffffff;
   }
-
   .tit-app {
     width: 166px;
     height: 71.12px;
   }
-
   #app {
     padding-top: 0;
     gap: 0;
   }
-
   .vending-machine {
     padding: 1.8rem 2.7rem 2.8rem;
-
     /* 4개 */
     /* 위 오 아 왼 */
     /* 3개 */
     /* 위 (오 왼) 아 */
     /* 2개 */
     /* (위 아) (오 왼) */
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     background-color: #ffffff;
   }
-
   .my-info .cont-mymoney {
     padding: 0 2.7rem;
   }
-
   .my-info .cont-myitems {
     margin-top: 0;
     padding: 4.1rem 2.7rem 2.6rem;
   }
-
   .my-info .cont-myitems {
     padding: 2.5rem 2.7rem 4.3rem;
   }
 }
+
 /* 1. 안에서부터 만들어보기 */
 /* scroll 디자인 넣어서 또 시도해보기 */
 /* 모듈형으로 디자인해보기 */
 /* focus??? */
 /* 로그인 및 select box 프로젝트에서 배운 팁도 적용해보기 */
+/*# sourceMappingURL=style.css.map */

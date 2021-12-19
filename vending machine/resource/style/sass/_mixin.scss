@@ -1,0 +1,52 @@
+@function unitCheck($x) {
+  // 단위체크
+  @if (type-of($x) ==number) {
+    @if (unitless($x)) {
+      @return $x + rem;
+    }
+  }
+  @return $x;
+}
+
+@mixin absolute($align: null, $way: row) {
+}
+
+@mixin flex($direction: row, $justify: flex-start, $align: null) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  @content;
+}
+
+@mixin base($w: 36, $pt: 3.7, $plr: 2.7, $pb: 2.8) {
+  $w: unitCheck($w);
+  $pt: unitCheck($pt);
+  $plr: unitCheck($plr);
+  $pb: unitCheck($pb);
+
+  max-width: $w;
+  width: 100%;
+  padding-left: $plr;
+  padding-right: $plr;
+}
+
+@mixin box(
+  $shadow: 0 0 0.4rem rgba(0, 0, 0, 0.25),
+  $sizing: border-box,
+  $border-radius: 0.5
+) {
+  $border-radius: unitCheck($border-radius);
+
+  box-shadow: $box-shadow;
+  box-sizing: $sizing;
+  border-radius: $border-radius;
+}
+
+@mixin media($width) {
+  $width: unitCheck($width);
+
+  @media all and (max-width: $width) {
+    @content;
+  }
+}
