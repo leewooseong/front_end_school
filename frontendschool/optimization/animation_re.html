@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        body {
+            margin: 100px;
+        }
+
+        .target {
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            transition: 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="target"></div>
+    <script>
+        const target = document.querySelector(".target");
+        let pos = 0;
+        let keys = {};
+
+        document.addEventListener('keydown', move);
+        document.addEventListener('keyup', stop);
+
+        // 특정 key가 눌렸는지 안눌렸는지에 대한 정보를 keys로 관리
+        function move(event) {
+            keys[event.key] = true;      // 객체를 추가해주는 것
+        }
+        
+        function stop(event) {
+            keys[event.key] = false;     // 객체를 추가해주는 것
+        }
+
+        // 애니메이션 전용 함수: key에 따른 동작을 정의
+        function play() {
+            if(keys.ArrowRight) {
+                pos += 5;
+                target.style.transform = `translateX(${pos}px)`;
+            }
+            if (keys.ArrowLeft) {
+                pos -= 5;
+                target.style.transform = `translateX(${pos}px)`;
+            }
+            window.requestAnimationFrame(play);
+        }
+
+        window.requestAnimationFrame(play);
+
+
+        // // requestAnimationFrame을 사용하기 위한 예시 함수
+        // function test() {
+        //     console.log("play!!");
+        //     // 다시 윈도우에게 알리는 것, 재귀적으로 써야한다. 
+        //     // -> 계속 순환하면서 상태를 체크, 사용자의 반응이 언제 어떻게 나올지 모르기 때문에
+        //     window.requestAnimationFrame(test);
+        // }
+
+        // ※ requestAnimationFrame:
+        //    - 라우저에게 수행하기를 원하는 애니메이션을 알리고 다음 리페인트가 진행되기 전에 해당 애니메이션을 업데이트하는 함수를 호출하게 합니다. 
+        //    - 
+        //    - https://developer.mozilla.org/ko/docs/Web/API/Window/requestAnimationFrame
+
+
+        // 리스너함수엔 event 객체가 들어가있다?
+        // function move(event) {
+        //     const keyName = event.key;
+        //     if (keyName === 'ArrowRight') {
+        //         pos += 5;
+        //         target.style.transform = `translateX(${pos}px)`        
+        //     } 
+        //     if (keyName === 'ArrowLeft') {
+        //         pos -= 5;
+        //         target.style.transform = `translateX(${pos}px)`    
+        //     }
+        // }
+
+    </script>
+</body>
+</html>
+
+<!-- animation.html과 동작 비교해보기 -->

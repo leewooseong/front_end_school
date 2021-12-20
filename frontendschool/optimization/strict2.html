@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <script>
+        'use strict';           // 문제들을 잡아준다.
+
+        str = "hello strict";           // 1. var가 없어서 에러
+        var undefined = "undefined";
+        console.log(undefined);         // 2. 예약어 사용 에러
+        var Infinity = 100;             // 3. 읽기만 하는 프로퍼티에 쓰기 금지 에러
+        console.log(Infinity);
+        Math.PI = 0;                    // 4. 읽기만 하는 프로퍼티에 쓰기 금지 에러
+
+        delete Object.prototype;        // 5. 오브젝트 생성자의 프로퍼티를 삭제할 수 없기 때문에 에러
+
+        function myFunc(a, a, b) {      // 6. 매개변수가 같아서 에러
+            console.log(a + a + b);
+        }
+
+        myFunc(1, 2, 3);
+
+        // ※ delete 사용법
+        // const Employee = {
+        //     firstname: "jaehyun",
+        //     lastname: "han"
+        // }
+
+        // console.log(Employee.firstname);
+        
+        // delete Employee.firstname;          // 프로퍼티 삭제
+        
+        // console.log(Employee.firstname);
+
+
+    </script>
+</body>
+</html>

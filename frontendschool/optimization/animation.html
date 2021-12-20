@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        body {
+            margin: 100px;
+        }
+
+        .target {
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            transition: 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="target"></div>
+    <script>
+        const target = document.querySelector(".target");
+        let pos = 0;
+
+        document.addEventListener('keydown', move);
+
+        // 리스너함수엔 event 객체가 들어가있다?
+        function move(event) {
+            const keyName = event.key;
+            if (keyName === 'ArrowRight') {
+                pos += 5;
+                target.style.transform = `translateX(${pos}px)`        
+            } 
+            if (keyName === 'ArrowLeft') {
+                pos -= 5;
+                target.style.transform = `translateX(${pos}px)`    
+            }
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+    ※ 이렇게 사용하면 움직임을 보는게 조금 불편하다?
+       - animation_re.html과 동작 비교해보기
+-->

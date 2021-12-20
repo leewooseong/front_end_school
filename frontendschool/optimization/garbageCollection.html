@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <script>
+        // case 1.
+        var me = { age: 30 };   // { age:30 }에 대한 참조 카운팅 1개
+        var you = me;           // 2개
+        me = null;              // 1개
+        you = null;             // 0개 -> {age:30}이 가비지 컬렉션에 의해 삭제됨
+
+        // case 2.
+        var x = {
+            y:{
+                z: 1
+            }
+        }
+        // x 참조 객체 = object1, y 참조 객체 = object2
+        var a = x;  // object1 객체의 참조 카운트: 2 ( x, a )
+        x = 1;      // object1 객체의 참조 카운트: 1 ( a )
+
+        var b = a.y;// object2 객체의 참조 카운트: 2 (y, b)
+        a = 2;      // object1 객체의 참조 카운트: 0
+
+        // 이렇게 더 이상 사용하지 않지만 메모리에 불필요하게 남아있는 객체가 있을 경우(= object1) 메모리 누수(leak)가 발생햇다고 합니다.
+        // object1은 참조 카운트가 0이지만 object2에 대한 참조 객체가 남아있기 때문에 가비지 콜렉팅이 되지 않는다.(***순환참조 문제)
+
+        // 최신 브라우저에서는 마크 스위트 알고리즘(표시하고 쓸어버린다.)을 이용해서 이를 해결
+        // 마크 스위트 알고리즘?
+        // 개인적으로 공부가 필요    
+
+
+
+
+    </script>
+</body>
+</html>
